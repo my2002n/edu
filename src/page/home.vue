@@ -119,8 +119,6 @@ export default {
         min-height: 840px;
         background: #EEF4F9;
         height: 100%;
-        /*display: flex;*/
-        /*flex-direction: column;*/
         .icon-list {
             background: #22345E;
             img{
