@@ -1,0 +1,797 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#__nuxt,
+#__layout {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+// icon font
+// @import '~assets/less/iconfont.less';
+// @import '~assets/less/Mixins.less';
+
+@line-height: 32px;
+@line-height-big: 40px;
+@gray-border: #eceef5;
+
+// // 动效
+// .page-enter-active,
+// .page-leave-active {
+//     transition: opacity 0.2s;
+// }
+// .page-enter,
+// .page-leave-to {
+//     opacity: 0;
+// }
+
+// TODO: 覆盖 vbap/css/vbap.css中的样式
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+	width: 5px !important;
+	height: 5px !important;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px 0px 5px 10px 0px rgba(0, 0, 0, 0.1) !important;
+	border-radius: 3px;
+	/*滚动条的背景区域的圆角*/
+	background: rgba(229, 233, 242, 1) !important;
+	/*滚动条的背景颜色*/
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+	border-radius: 3px !important;
+	/*滚动条的圆角*/
+	-webkit-box-shadow: inset 0 0 6px 0px 5px 10px 0px rgba(0, 0, 0, 0.1) !important;
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1) !important;
+	/*滚动条的背景颜色*/
+	background: rgba(116, 138, 161, 1) !important;
+	visibility: initial !important;
+}
+
+// TODO: 全局使用
+.container {
+	margin: 0 auto;
+	width: 1076px;
+}
+
+// 修复 el-message 出现在 el-dialog 遮罩底下的 bug
+// el-dialog 的 z-index = baseZIndex + 17
+// 当前 baseZIndex 定义为 3000
+.el-message {
+	z-index: 3200;
+}
+
+// -----------------分割线
+// 给页面 左边儿 有公共内容的 使用
+.left60 {
+	margin-left: 60px;
+}
+
+.navigetion-content {
+	margin-left: 60px;
+	width: calc(100% - 60px);
+	height: 100%;
+}
+
+// 所有的 有输入输出 内容的 页面的公共样式
+// 结构参考：diycode ->_id -> noetbook -> index.vue
+.title70 {
+	// width: 100%;
+	height: 70px;
+	background-color: #fff;
+	border-bottom: 1px solid #dcdcdc;
+	padding-left: 20px;
+	padding-right: 16px;
+	// margin-bottom: 22px;
+}
+
+.dc-btn {
+	margin: 0;
+	padding: 0;
+	width: 120px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	border: none;
+	border-radius: @radius;
+	outline: none;
+	cursor: pointer;
+	background-color: #00a0e9;
+	color: #fff;
+
+	&:active {
+		opacity: 0.8;
+	}
+}
+
+.dc-scroll {
+	.el-scrollbar__bar {
+		background-color: #e5e9f2;
+		border-radius: 3px;
+		// opacity: 1;
+	}
+	.el-scrollbar__thumb {
+		background-color: #748aa1;
+		border-radius: 3px;
+
+		&:hover {
+			background-color: #748aa1;
+			border-radius: 3px;
+		}
+	}
+
+	// 隐藏 横轴滚动条
+	&.x-hide {
+		.el-scrollbar__wrap {
+			overflow-x: hidden;
+		}
+		.el-scrollbar__bar.is-horizontal {
+			display: none;
+		}
+	}
+
+	// 隐藏 纵轴滚动条
+	&.y-hide {
+		.el-scrollbar__wrap {
+			overflow-y: hidden;
+		}
+		.el-scrollbar__bar.is-vertical {
+			display: none;
+		}
+	}
+}
+
+.dc-table-content {
+	table {
+		margin-right: 8px;
+		font-size: 12px;
+		color: #555f69;
+		font-weight: 400;
+		border-width: 1px;
+		background: #ffffff;
+		border-color: #f0f3f4;
+		border-collapse: collapse;
+	}
+
+	table thead th {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #f0f3f4;
+		background-color: #ffffff;
+		text-align: left;
+		vertical-align: middle;
+	}
+
+	table td {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #f0f3f4;
+		text-align: left;
+		vertical-align: middle;
+	}
+
+	table tbody tr {
+		&:nth-child(even) {
+			background: #ffffff;
+		}
+
+		&:nth-child(odd) {
+			background: #fbfbfb;
+		}
+	}
+}
+
+// 显隐动画
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.3s, width 0.3s;
+}
+
+.fade-leave-to,
+.fade-enter {
+	opacity: 0;
+}
+
+.docker-loading {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	z-index: 5;
+
+	img {
+		width: 266px;
+		height: 150px;
+		position: absolute;
+		left: 50%;
+		top: 40%;
+		margin-left: -133px;
+		margin-top: -75px;
+	}
+}
+
+.docker-loading .el-dialog__wrapper {
+	z-index: 3001;
+}
+
+// -----------------分割线
+
+.dc-input {
+	width: 100%;
+	min-height: @line-height;
+	padding: 0 10px;
+	border: 1px solid rgba(235, 237, 244, 1);
+	border-radius: 2px;
+}
+
+.dc-input-big {
+	&:extend(.dc-input);
+	min-height: @line-height-big;
+}
+
+.dc-dialog {
+	.el-dialog__header {
+		padding: 0;
+	}
+
+	.el-dialog__body {
+		padding: 0;
+	}
+
+	.el-dialog__footer {
+		.dc-link {
+			margin-left: 24px;
+		}
+	}
+}
+
+// 按钮
+.dc-button {
+	// min-width: 84px;
+	outline: none;
+	border: none;
+	min-height: @line-height;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 1px 4px 0px rgba(229, 233, 242, 1);
+	border-radius: 4px;
+	color: #90a0b7;
+	cursor: pointer;
+	transition: all 0.2s;
+	padding: 8px 16px;
+
+	&:active {
+		color: rgb(129, 139, 153);
+		background: rgb(241, 241, 241);
+		box-shadow: 0px 2px 5px 0px rgba(229, 233, 242, 1);
+	}
+
+	&.primary {
+		color: #fff;
+		background: linear-gradient(
+			17deg,
+			rgba(16, 156, 241, 1) 0%,
+			rgba(46, 176, 255, 1) 100%
+		);
+		transition: all 0.2s;
+
+		&:active {
+			color: rgb(240, 240, 240);
+			box-shadow: 0px 2px 5px 0px rgba(229, 233, 242, 1);
+			background: linear-gradient(
+				17deg,
+				rgb(13, 145, 226) 0%,
+				rgb(45, 168, 245) 100%
+			);
+		}
+	}
+}
+
+.dc-button-big {
+	// min-width: 84px;
+	outline: none;
+	border: none;
+	min-height: @line-height-big;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 1px 4px 0px rgba(229, 233, 242, 1);
+	border-radius: 4px;
+	color: #90a0b7;
+	cursor: pointer;
+	transition: all 0.2s;
+	padding: 8px 16px;
+
+	&:active {
+		color: rgb(129, 139, 153);
+		background: rgb(241, 241, 241);
+		box-shadow: 0px 2px 5px 0px rgba(229, 233, 242, 1);
+	}
+
+	&.primary {
+		color: #fff;
+		background: linear-gradient(
+			17deg,
+			rgba(16, 156, 241, 1) 0%,
+			rgba(46, 176, 255, 1) 100%
+		);
+		transition: all 0.2s;
+
+		&:active {
+			color: rgb(240, 240, 240);
+			box-shadow: 0px 2px 5px 0px rgba(229, 233, 242, 1);
+			background: linear-gradient(
+				17deg,
+				rgb(13, 145, 226) 0%,
+				rgb(45, 168, 245) 100%
+			);
+		}
+	}
+}
+
+// 表单
+.dc-form-input-necessary::before {
+	content: '-';
+	width: 100px;
+	height: 100px;
+	background-color: #000;
+}
+
+.dc-link {
+	color: #192a3e;
+	cursor: pointer;
+	font-size: @font-size-mini;
+
+	&.primary {
+		color: #109cf1;
+	}
+}
+
+.dc-link-color {
+	color: #109cf1;
+}
+
+.dc-tabs {
+	.el-tabs__header {
+		margin: 0 0 16px;
+	}
+
+	.el-tabs__item {
+		transition: all 0.2s;
+	}
+
+	.el-tabs__active-bar {
+		transition: all 0.2s;
+	}
+
+	.el-tabs__nav-wrap::after {
+		height: 1px;
+		background-color: #ebedf4;
+	}
+
+	.el-tabs__item.is-active {
+		// color: #000;
+		// font-weight: 700;
+	}
+}
+
+.dc-tabs-center {
+	.el-tabs__header {
+		margin: 0 0 16px;
+	}
+
+	.el-tabs__nav-scroll {
+		display: flex;
+		justify-content: center;
+	}
+
+	.el-tabs__item {
+		transition: all 0.2s;
+	}
+
+	.el-tabs__active-bar {
+		transition: all 0.2s;
+	}
+
+	.el-tabs__nav-wrap::after {
+		height: 1px;
+		background-color: #ebedf4;
+	}
+
+	.el-tabs__item.is-active {
+		// color: #000;
+		// font-weight: 700;
+	}
+}
+
+.dc-register-repassword-pnael {
+	@width: 732px;
+	width: @width;
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -@width / 2;
+	z-index: 500;
+
+	.distance {
+		margin-bottom: 24px;
+	}
+
+	.big-distance {
+		margin-bottom: 60px;
+	}
+
+	.title {
+		margin: 0 auto;
+
+		.dc-logo {
+			margin: 0 auto 38px;
+		}
+	}
+
+	.register-content {
+		background: rgba(255, 255, 255, 1);
+		border: 1px solid rgba(234, 236, 240, 1);
+		box-shadow: 0px 1px 32px 0px rgba(14, 104, 159, 0.1);
+		border-radius: 4px;
+		text-align: center;
+		border-top: 6px solid rgba(16, 156, 241, 1);
+		padding: 0 40px;
+
+		.form-title {
+			padding: 28px 0;
+			font-size: 18px;
+			font-weight: 400;
+			border-bottom: 1px solid #ebedf4;
+			margin-bottom: 24px;
+		}
+
+		.form {
+			margin: 0 auto;
+			width: 320px;
+		}
+	}
+}
+
+.dc-login-bgcs {
+	// position: relative;
+	z-index: 100;
+
+	.persons {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+		// background-image: url('~assets/img/login/bgc.png');
+		background-size: contain;
+		background-position: bottom;
+		width: 50%;
+		height: 100%;
+	}
+
+	.cloud-top {
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+		// background-image: url('~assets/img/login/up.png');
+		background-size: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 90%;
+		height: 10%;
+	}
+
+	.cloud-bottom {
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+		// background-image: url('~assets/img/login/down.png');
+		background-size: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 90%;
+		height: 10%;
+	}
+}
+
+.dc-logo {
+	display: block;
+
+	// background: url('~assets/img/common/logo.svg') no-repeat;
+	background-size: 100% 100%;
+	width: 180px;
+	height: 30px;
+	// text-indent: -9999px;
+	// margin-right: 18px;
+	// margin-top: 14px;
+}
+
+// 工具页面常用布局 用法见数据连接首页 来不及写教程
+.dc-tool-layout {
+	background-color: #fff;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 54px;
+	padding-left: 60px;
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 70px;
+		// line-height: 70px;
+		padding: 0 16px;
+		border-bottom: 1px solid @gray-border;
+		font-size: @font-size-mid;
+		color: #222222;
+
+		.left-content {
+			.title {
+				font-weight: 400;
+				margin-right: 38px;
+			}
+
+			.default-item {
+				margin-right: 16px;
+			}
+
+			.common-width {
+				width: 180px;
+			}
+		}
+
+		.right-content {
+			.default-item {
+				margin-left: 16px;
+			}
+		}
+	}
+
+	.content {
+		display: flex;
+		height: 100%;
+		//padding-bottom: 110px;
+		// padding-top: 124px;
+
+		.main {
+			flex: 1;
+
+			.main-header {
+				height: 40px;
+				line-height: 40px;
+				border-bottom: 1px solid @gray-border;
+			}
+
+			.main-content {
+				height: 100%;
+				overflow-y: auto;
+			}
+		}
+
+		.aside {
+			width: 380px;
+			// overflow-y: auto;
+
+			border-left: 1px solid @gray-border;
+
+			.aside-header {
+				height: 54px;
+				line-height: 54px;
+				border-bottom: 1px solid @gray-border;
+				padding: 0 24px;
+			}
+
+			.aside-content {
+				padding: 0 24px;
+				height: 100%;
+				overflow-y: auto;
+
+				hr {
+					border-top: 1px solid @gray-border;
+				}
+
+				.line {
+					padding: 8px 0;
+					// display: flex;
+					// justify-content: space-between;
+					// align-items: center;
+					color: #90a0b7;
+
+					:first-child {
+						color: #334d6e;
+					}
+				}
+			}
+		}
+	}
+}
+
+.dc-select {
+	width: 100%;
+
+	.el-input__icon {
+		line-height: 32px;
+	}
+
+	input {
+		height: @line-height;
+		border: 1px solid rgba(235, 237, 244, 1);
+		border-radius: 2px;
+	}
+}
+
+.dc-fake-tab {
+	border-bottom: 2px solid #109cf1;
+	display: inline-block;
+	height: 53px;
+}
+
+// 项目中所有输入设置标签的地方都要引用 tag-warp 这个样式
+.tag-warp .el-input__inner {
+	height: 14px;
+	line-height: 14px;
+	border: none;
+	margin-bottom: 8px;
+}
+
+// 按钮组：公共样式
+.dc-button-group {
+	outline: none;
+	border: none;
+	min-height: 32px;
+	padding: 0;
+	background: #ffffff;
+	box-shadow: 0px 1px 4px 0px #e5e9f2;
+	border-radius: 4px;
+	color: #90a0b7;
+	transition: all 0.2s;
+
+	.dc-button:first-child {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		box-shadow: none;
+		border-right: 1px solid #e5e9f2;
+	}
+
+	.dc-button:last-child {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		box-shadow: none;
+		border-left: none;
+	}
+}
+
+.dc-error-tip {
+	height: 30px;
+	line-height: 30px;
+	background: rgba(232, 76, 141, 0.2);
+	color: rgba(232, 76, 141, 1);
+	font-size: 12px;
+	padding: 0 10px;
+	text-align: left;
+}
+
+// 临时的，以后删除 TODO:s
+.coming {
+	padding: 100px;
+	text-align: center;
+	font-size: 16px;
+}
+
+@notVerifed: #e84c8d;
+@verifed: #67c23a;
+
+.dc-important-input {
+	position: relative;
+
+	.angle {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		top: -4px;
+		right: -4px;
+		transform: rotate(45deg);
+		border-top: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 8px solid @notVerifed;
+		border-left: 8px solid transparent;
+		transition: all 1s;
+	}
+
+	&.verified {
+		// color: @verifed;
+
+		.angle {
+			border-bottom: 8px solid @verifed;
+		}
+	}
+}
+
+.no-outline {
+	:focus {
+		outline: none;
+	}
+}
+
+.dc-tab-in-login {
+	ul {
+		li {
+			padding: 8px 30px !important;
+		}
+	}
+}
+
+.htDropdownMenu table tbody tr td .htItemWrapper {
+	margin: 0 !important;
+}
+.htDropdownMenu table.htCore {
+	background: rgba(255, 255, 255, 1);
+	border: 1px solid rgba(228, 231, 237, 1) !important;
+	border-radius: 4px;
+	border-top: none;
+	box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.2);
+}
+.htDropdownMenu i {
+	margin-right: 8px;
+}
+.dc-button-with-sm {
+	height: 32px;
+	line-height: 32px;
+	display: flex;
+	margin-right: 8px;
+
+	.button {
+		display: flex;
+		height: 32px;
+		// width: 32px;
+		min-width: 32px;
+		border: 1px solid rgba(235, 237, 244, 1);
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		border-right: none;
+		background-color: #f5f6fa;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.dc-select {
+		width: 148px;
+	}
+}
+
+.dc-tab-in-explore {
+	ul {
+		line-height: 31px;
+		padding-left: 30px;
+
+		li {
+			margin-right: 100px;
+		}
+	}
+}
+.dc-tab-in-explore-main {
+	ul {
+		height: 60px;
+		line-height: 47px;
+
+		li {
+			margin-left: 54px;
+		}
+	}
+}
