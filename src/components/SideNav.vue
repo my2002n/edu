@@ -38,6 +38,7 @@
                     <span>讲师</span>
                 </template>
                 <el-menu-item-group>
+                    <router-link to="/largeClassList">大班课列表</router-link>
                     <el-menu-item index="1-1">新增讲师</el-menu-item>
                     <el-menu-item index="1-2">讲师列表</el-menu-item>
                 </el-menu-item-group>

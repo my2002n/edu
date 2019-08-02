@@ -18,6 +18,10 @@ export default new Router({
         {
             path: '/studentList',
             component: r => require.ensure([], () => r(require('../page/studentList')), 'studentList')
+        },
+        {
+            path: '/largeClassList',
+            component: r => require.ensure([], () => r(require('../page/largeClassList')), 'largeClassList')
         }
     ]
 })
