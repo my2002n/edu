@@ -2,10 +2,9 @@
 // Micro clear fix
 // via: http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix() {
-
     &:before,
     &:after {
-        content: ' ';
+        content: " ";
         display: table;
     }
 
@@ -21,6 +20,30 @@
     width: 224px;
     height: 80%;
     //background-color: #22345E
+}
+.home-container {
+    min-width: 1280px;
+    min-height: 840px;
+    background: #eef4f9;
+    height: 100%;
+
+    .right-container {
+        height: 100%;
+        background: #eef4f9;
+        width: calc(100% - 224px);
+        min-width: 1056px;
+        float: right;
+
+        .header {
+            height: 80px;
+            background: #ffffff;
+        }
+
+        .right-content {
+            width: calc(100% - 46px);
+            margin-left: 16px;
+        }
+    }
 }
 
 // Text overflow
@@ -76,28 +99,28 @@
 }
 
 .subheader() {
-    font-size:  @font-size-big;
+    font-size: @font-size-big;
 }
 
 @font-size-big: 16px;
 @font-size-mid: 14px;
 @font-size-mini: 12px;
-@color-common: #192A3E;
-@color-deep: #555F69;
-@color-deep-gray: #748AA1;
-@color-light-gray: #90A0B7;
-@color-python: #109CF1;
-@line: #ECEEf5; // 分割线
-@border: #C2CFE0; // 边框
-@color-r: #FFB946;
-@color-sql: #2ED47A;
+@color-common: #192a3e;
+@color-deep: #555f69;
+@color-deep-gray: #748aa1;
+@color-light-gray: #90a0b7;
+@color-python: #109cf1;
+@line: #eceef5; // 分割线
+@border: #c2cfe0; // 边框
+@color-r: #ffb946;
+@color-sql: #2ed47a;
 
-@color-F7685B: #F7685B;
-@color-67C23A: #67C23A;
-@color-2ED47A: #2ED47A;
-@color-FFB946: #FFB946;
-@color-109CF1: #109CF1;
-@color-885AF8: #885AF8;
+@color-F7685B: #f7685b;
+@color-67C23A: #67c23a;
+@color-2ED47A: #2ed47a;
+@color-FFB946: #ffb946;
+@color-109CF1: #109cf1;
+@color-885AF8: #885af8;
 
 @shadow: 0px 1px 4px 0px rgba(229, 233, 242, 1);
 @shadow-hovered: 0px 2px 18px 0px rgba(203, 208, 221, 1);
