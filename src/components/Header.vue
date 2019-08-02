@@ -1,10 +1,10 @@
 <template>
     <div class="header-contain">
         <div class="left">
-            <span v-for="(item, idx) in headerList">
-                {{item}}
-                <!--               <img src="../../src/assets/img/welcome/line.png" alt="">-->
-            </span>
+            <div v-for="(item, idx) in headerList">
+                <span>{{item}}</span>
+                <img src="../../src/assets/img/welcome/line.png" alt="" class="line">
+            </div>
         </div>
         <div class="right">
             <img src="../../src/assets/img/welcome/person.png" alt="">
@@ -12,9 +12,10 @@
                 <span>王美娜</span>
                 <span class="grey-name">管理员</span>
             </div>
-            <span class="out-btn">
-                退出
-            </span>
+            <div class="out-btn">
+                <img src="../../src/assets/img/welcome/arrow.png" alt="">
+                <span>退出</span>
+            </div>
         </div>
     </div>
 </template>
@@ -45,6 +46,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
+    @import url('../../src/assets/less/Mixins.less');
+    @import url('../../src/assets/less/common.less');
     .out-btn {
         width: 75px;
         height: 36px;
@@ -56,13 +59,24 @@
     }
 
     .left {
-        line-height: 80px;
         width: calc(100% - 250px);
         text-align: left;
         float: left;
-
-        span {
-            padding: 0px 20px;
+        color: #697B8C;
+        span{
+            position: relative;
+            top: -32px;
+            /*left: -8px;*/
+        }
+        img{
+            margin-left: 20px;
+        }
+        div {
+            display: inline-block;
+            padding: 0px 10px;
+        }
+        .line {
+            height: 80px;
         }
     }
 
@@ -72,7 +86,7 @@
         /*line-height: 80px;*/
         float: right;
         padding-right: 30px;
-
+        .flex(row, space-between, center, nowrap);
         img {
             height: 48px;
             display: inline-block;
