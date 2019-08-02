@@ -5,21 +5,22 @@
             <img src="../../src/assets/img/welcome/logoText.png" alt="">
         </div>
         <div class="icon-list">
-            <span @click="handleClickIcon(1)">
-                <img src="../../src/assets/img/welcome/icon1.png" alt="">
+            <span @click="handleClickIcon(1)" :class="{deepColor: activeTab === 'Member'}">
+                <img src="../../src/assets/img/welcome/icon1.png" alt="" v-if="activeTab !== 'Member'">
+                <img src="../../src/assets/img/welcome/icon11.png" alt="" v-else>
             </span>
-            <span @click="handleClickIcon(2)">
-                <img src="../../src/assets/img/welcome/icon2.png" alt="">
+            <span @click="handleClickIcon(2)" :class="{deepColor: activeTab === 'Show'}">
+                <img src="../../src/assets/img/welcome/icon2.png" alt="" v-if="activeTab !== 'Show'">
+                <img src="../../src/assets/img/welcome/icon21.png" alt="" v-else>
             </span>
-            <span @click="handleClickIcon(3)">
-                <img src="../../src/assets/img/welcome/icon3.png" alt="">
+            <span @click="handleClickIcon(3)" :class="{deepColor: activeTab === 'Tv'}">
+                <img src="../../src/assets/img/welcome/icon3.png" alt="" v-if="activeTab !== 'Tv'">
+                <img src="../../src/assets/img/welcome/icon31.png" alt="" v-else>
             </span>
-            <span @click="handleClickIcon(4)">
-                <img src="../../src/assets/img/welcome/icon4.png" alt="">
+            <span @click="handleClickIcon(4)" :class="{deepColor: activeTab === 'Text'}">
+                <img src="../../src/assets/img/welcome/icon4.png" alt="" v-if="activeTab !== 'Text'">
+                <img src="../../src/assets/img/welcome/icon41.png" alt="" v-else>
             </span>
-
-
-
 
         </div>
         <div class="active-line">
@@ -51,9 +52,12 @@
                     <span class="nav-title">讲师</span>
                 </template>
                 <el-menu-item-group>
-                    <router-link to="/largeClassList">大班课列表</router-link>
-                    <el-menu-item index="1-1">新增讲师</el-menu-item>
-                    <el-menu-item index="1-2">讲师列表</el-menu-item>
+                    <el-menu-item index="1-1">
+                        <router-link to="/largeClassList">大班课列表</router-link>
+                    </el-menu-item>
+
+                    <el-menu-item index="1-2">新增讲师</el-menu-item>
+                    <el-menu-item index="1-3">讲师列表</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
             <el-submenu index="3">
@@ -102,8 +106,10 @@
                     <span class="nav-title">直播小班课</span>
                 </template>
                 <el-menu-item-group>
-                    <router-link to="/largeClassList">新增直播小班课</router-link>
-                    <el-menu-item index="1-1">小班课列表</el-menu-item>
+                    <el-menu-item index="1-1">
+                        <router-link to="/largeClassList">新增直播小班课</router-link>
+                    </el-menu-item>
+                    <el-menu-item index="1-2">小班课列表</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
             <el-submenu index="3">
@@ -138,6 +144,12 @@
                 }
                 if (index === 2) {
                     this.activeTab = 'Show'
+                }
+                if (index === 3) {
+                    this.activeTab = 'Tv'
+                }
+                if (index === 4) {
+                    this.activeTab = 'Text'
                 }
 
             }
@@ -187,15 +199,22 @@
         }
 
         .icon-list {
-            background: #22345E;
-
-            img {
-                height: 36px;
-                width: 52px;
+            height: 36px;
+            /*background: #22345E;*/
+            background: rgb(56, 73, 114);
+            .flex(row, space-between, center,nowrap);
+            .deepColor {
+                background: #22345E;
             }
-
             span {
+                height: 100%;
+                width: 25%;
                 cursor: pointer;
+                text-align: center;
+                img{
+                    margin-top: 8px;
+                }
+
             }
         }
 
@@ -207,6 +226,9 @@
                 background: #55A8FD;
                 border-radius: 2px;
                 display: inline-block;
+                position: relative;
+                left: -10px;
+                top: -2px;
                 // position: absolute;
                 // left: 0px;
                 // top: 27%;
@@ -225,14 +247,20 @@
             position: relative;
 
             &::before {
-                height: 40%;
+                height: 32%;
                 width: 2px;
                 content: "";
                 background: #55A8FD;
                 position: absolute;
                 left: 0px;
-                top: 27%;
+                top: 35%;
                 display: inline-block;
+            }
+        }
+        .el-menu {
+            a {
+                color: #FFFFFF;
+                text-decoration: none;
             }
         }
     }
@@ -241,12 +269,35 @@
 <style lang='less'>
     .left-container {
         .el-submenu__title {
+            line-height: 40px!important;
+            height: 40px!important;
             padding-left: 60px !important;
+            &:hover{
+                background:rgba(85,168,253,0.3)!important;
+                color: #55A8FD!important;
+            }
         }
 
         .el-menu-item-group {
             ul li {
                 padding-left: 65px !important;
+
+            }
+            .el-menu-item {
+                line-height: 40px!important;
+                height: 40px!important;
+                &:hover{
+                    background:rgba(85,168,253,0.3)!important;
+                    color: #55A8FD!important;
+                }
+            }
+
+        }
+        .el-submenu__icon-arrow {
+            &::before{
+                /*position: relative;*/
+                /*left: 10px;*/
+                color: #fff;
             }
         }
     }
