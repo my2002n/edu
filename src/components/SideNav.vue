@@ -30,8 +30,8 @@
             background-color="#22345E" text-color="#fff" active-text-color="#55A8FD" v-if="activeTab === 'Member'">
             <el-submenu index="1">
                 <template slot="title">
-                    <div class="circle"></div>
-                    <span>欢迎</span>
+                    <!-- <div class="circle"></div> -->
+                    <span class="nav-title">欢迎</span>
                 </template>
                 <el-menu-item-group>
                     <el-menu-item index="1-1">欢迎页</el-menu-item>
@@ -47,8 +47,8 @@
             </el-submenu>
             <el-submenu index="2">
                 <template slot="title">
-                    <div class="circle"></div>
-                    <span>讲师</span>
+                    <!-- <div class="circle"></div> -->
+                    <span class="nav-title">讲师</span>
                 </template>
                 <el-menu-item-group>
                     <router-link to="/largeClassList">大班课列表</router-link>
@@ -58,8 +58,8 @@
             </el-submenu>
             <el-submenu index="3">
                 <template slot="title">
-                    <div class="circle"></div>
-                    <span>学科</span>
+                    <!-- <div class="circle"></div> -->
+                    <span class="nav-title">学科</span>
                 </template>
                 <el-menu-item-group>
                     <el-menu-item index="1-1">新增学科</el-menu-item>
@@ -68,8 +68,8 @@
             </el-submenu>
             <el-submenu index="4">
                 <template slot="title">
-                    <div class="circle"></div>
-                    <span>班级</span>
+                    <!-- <div class="circle"></div> -->
+                    <span class="nav-title">班级</span>
                 </template>
                 <el-menu-item-group>
                     <el-menu-item index="1-1">
@@ -84,8 +84,8 @@
             background-color="#22345E" text-color="#fff" active-text-color="#55A8FD" v-if="activeTab === 'Show'">
             <el-submenu index="1">
                 <template slot="title">
-                    <div class="circle"></div>
-                    <span>直播大班课</span>
+                    <!-- <div class="circle"></div> -->
+                    <span class="nav-title">直播大班课</span>
                 </template>
                 <el-menu-item-group>
                     <el-menu-item index="1-1">新增直播大班课</el-menu-item>
@@ -98,8 +98,8 @@
             </el-submenu>
             <el-submenu index="2">
                 <template slot="title">
-                    <div class="circle"></div>
-                    <span>直播小班课</span>
+                    <!-- <div class="circle"></div> -->
+                    <span class="nav-title">直播小班课</span>
                 </template>
                 <el-menu-item-group>
                     <router-link to="/largeClassList">新增直播小班课</router-link>
@@ -108,8 +108,8 @@
             </el-submenu>
             <el-submenu index="3">
                 <template slot="title">
-                    <div class="circle"></div>
-                    <span>直播1v1</span>
+                    <!-- <div class="circle"></div> -->
+                    <span class="nav-title">直播1v1</span>
                 </template>
                 <el-menu-item-group>
                     <el-menu-item index="1-1">
@@ -199,6 +199,21 @@
             }
         }
 
+        .nav-title {
+            &::before {
+                height: 4px;
+                width: 4px;
+                content: "";
+                background: #55A8FD;
+                border-radius: 2px;
+                display: inline-block;
+                // position: absolute;
+                // left: 0px;
+                // top: 27%;
+
+            }
+        }
+
         .active-line {
             height: 45px;
             line-height: 45px;
@@ -218,6 +233,20 @@
                 left: 0px;
                 top: 27%;
                 display: inline-block;
+            }
+        }
+    }
+
+</style>
+<style lang='less'>
+    .left-container {
+        .el-submenu__title {
+            padding-left: 60px !important;
+        }
+
+        .el-menu-item-group {
+            ul li {
+                padding-left: 65px !important;
             }
         }
     }
