@@ -33,7 +33,10 @@
         props: {
             headerList: {
                 type: Array,
-                default: []
+                default: function () {
+                    return []
+                }
+
             }
         }
     }

@@ -5,16 +5,29 @@
             <img src="../../src/assets/img/welcome/logoText.png" alt="">
         </div>
         <div class="icon-list">
-            <img src="../../src/assets/img/welcome/icon1.png" alt="">
-            <img src="../../src/assets/img/welcome/icon2.png" alt="">
-            <img src="../../src/assets/img/welcome/icon3.png" alt="">
-            <img src="../../src/assets/img/welcome/icon4.png" alt="">
+            <span @click="handleClickIcon(1)">
+                <img src="../../src/assets/img/welcome/icon1.png" alt="">
+            </span>
+            <span @click="handleClickIcon(2)">
+                <img src="../../src/assets/img/welcome/icon2.png" alt="">
+            </span>
+            <span @click="handleClickIcon(3)">
+                <img src="../../src/assets/img/welcome/icon3.png" alt="">
+            </span>
+            <span @click="handleClickIcon(4)">
+                <img src="../../src/assets/img/welcome/icon4.png" alt="">
+            </span>
+
+
+
+
         </div>
         <div class="active-line">
-            <span>会员</span>
+            <span v-if="activeTab === 'Member'">会员</span>
+            <span v-if="activeTab === 'Show'">直播</span>
         </div>
         <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
-            background-color="#22345E" text-color="#fff" active-text-color="#55A8FD">
+            background-color="#22345E" text-color="#fff" active-text-color="#55A8FD" v-if="activeTab === 'Member'">
             <el-submenu index="1">
                 <template slot="title">
                     <div class="circle"></div>
@@ -66,6 +79,46 @@
                 </el-menu-item-group>
             </el-submenu>
         </el-menu>
+        <!-- 第二个 -->
+        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
+            background-color="#22345E" text-color="#fff" active-text-color="#55A8FD" v-if="activeTab === 'Show'">
+            <el-submenu index="1">
+                <template slot="title">
+                    <div class="circle"></div>
+                    <span>直播大班课</span>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="1-1">新增直播大班课</el-menu-item>
+                    <el-menu-item index="1-2">
+                        <router-link to="/login">大班课列表</router-link>
+
+                    </el-menu-item>
+                    <el-menu-item index="1-3">进入教室</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="2">
+                <template slot="title">
+                    <div class="circle"></div>
+                    <span>直播小班课</span>
+                </template>
+                <el-menu-item-group>
+                    <router-link to="/largeClassList">新增直播小班课</router-link>
+                    <el-menu-item index="1-1">小班课列表</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="3">
+                <template slot="title">
+                    <div class="circle"></div>
+                    <span>直播1v1</span>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="1-1">
+                        <router-link to="/addClass">新增直播客1v1</router-link>
+                    </el-menu-item>
+                    <el-menu-item index="1-2">1v1课列表</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+        </el-menu>
     </div>
 </template>
 
@@ -74,10 +127,20 @@
         name: 'Header',
         data() {
             return {
-
+                activeTab: 'Member', // 默认显示会员
             }
         },
         methods: {
+            // 点击上面图标
+            handleClickIcon(index) {
+                if (index === 1) {
+                    this.activeTab = 'Member'
+                }
+                if (index === 2) {
+                    this.activeTab = 'Show'
+                }
+
+            }
 
         },
         props: {
@@ -129,6 +192,10 @@
             img {
                 height: 36px;
                 width: 52px;
+            }
+
+            span {
+                cursor: pointer;
             }
         }
 
