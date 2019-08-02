@@ -28,7 +28,9 @@
 
                         </el-menu-item>
                         <el-menu-item index="1-3">新增学生</el-menu-item>
-                        <el-menu-item index="1-3">学生列表</el-menu-item>
+                        <el-menu-item index="1-3">
+                            <router-link to="/studentList">学生列表</router-link>
+                        </el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
                 <el-submenu index="2">
