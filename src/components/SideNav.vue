@@ -59,7 +59,9 @@
                     <span>班级</span>
                 </template>
                 <el-menu-item-group>
-                    <el-menu-item index="1-1">新增班级</el-menu-item>
+                    <el-menu-item index="1-1">
+                        <router-link to="/addClass">新增班级</router-link>
+                    </el-menu-item>
                     <el-menu-item index="1-2">班级列表</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
