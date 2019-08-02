@@ -48,11 +48,22 @@
                         </el-form>
                     </template>
                 </el-table-column>
-                <el-table-column label="商品 ID" prop="id">
+                <el-table-column label="手机号码" prop="id">
                 </el-table-column>
-                <el-table-column label="商品名称" prop="name">
+                <el-table-column label="姓名" prop="name">
                 </el-table-column>
-                <el-table-column label="描述" prop="desc">
+                <el-table-column label="出生日期" prop="desc">
+                </el-table-column>
+                <el-table-column label="性别" prop="desc">
+                </el-table-column>
+                <el-table-column label="备注" prop="desc">
+                </el-table-column>
+                <el-table-column label="操作">
+                    <template slot-scope="scope">
+                        <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                        <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除
+                        </el-button>
+                    </template>
                 </el-table-column>
             </el-table>
         </div>
@@ -112,6 +123,12 @@
                 },
                 handleCurrentChange(val) {
                     console.log(`当前页: ${val}`);
+                },
+                handleEdit(index, row) {
+                    console.log(index, row);
+                },
+                handleDelete(index, row) {
+                    console.log(index, row);
                 }
             }
         },
