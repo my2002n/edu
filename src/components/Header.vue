@@ -13,7 +13,7 @@
                 <span class="grey-name">管理员</span>
             </div>
             <div class="out-btn">
-                <img src="../../src/assets/img/welcome/arrow.png" alt="">
+                <img src="../../src/assets/img/welcome/arrow.png" alt="" class='out-img'>
                 <span>退出</span>
             </div>
         </div>
@@ -48,14 +48,30 @@
 <style lang="less" scoped>
     @import url('../../src/assets/less/Mixins.less');
     @import url('../../src/assets/less/common.less');
+
     .out-btn {
-        width: 75px;
-        height: 36px;
+        cursor: pointer;
+        width: 73px;
+        height: 34px;
         border-radius: 2px;
         opacity: 0.2733;
         border: 1px solid rgba(85, 168, 253, 1);
         font-size: 14px;
-        color: #55A8FD
+        color: #55A8FD;
+
+        .out-img {
+            width: 10px;
+            height: 12px;
+            position: relative;
+            left: 10px;
+            top: 8px;
+        }
+
+        span {
+            position: relative;
+            left: 10px;
+            top: 6px;
+        }
     }
 
     .left {
@@ -63,18 +79,22 @@
         text-align: left;
         float: left;
         color: #697B8C;
-        span{
+
+        span {
             position: relative;
             top: -32px;
             /*left: -8px;*/
         }
-        img{
+
+        img {
             margin-left: 20px;
         }
+
         div {
             display: inline-block;
             padding: 0px 10px;
         }
+
         .line {
             height: 80px;
         }
@@ -87,6 +107,7 @@
         float: right;
         padding-right: 30px;
         .flex(row, space-between, center, nowrap);
+
         img {
             height: 48px;
             display: inline-block;
@@ -97,6 +118,8 @@
         .name-content {
             width: 80px;
             display: inline-block;
+            position: relative;
+            top: 10px;
 
             span {
                 display: block;
@@ -107,7 +130,14 @@
                 font-family: PingFang-SC-Regular;
                 font-weight: 400;
                 color: rgba(105, 123, 140, 1);
+                position: relative;
+                top: 4px;
             }
+        }
+
+        .out-btn {
+            position: relative;
+            top: 13px;
         }
     }
 

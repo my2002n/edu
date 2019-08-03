@@ -97,10 +97,20 @@
             .flex(row, space-between, center, nowrap);
 
             >div {
+                text-align: center;
                 width: 33.333%;
                 margin-right: 20px;
                 background: #ffffff;
                 margin-top: 20px;
+                height: 310px;
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+            }
+
+            .ins {
+                margin-top: 26px;
             }
         }
 
@@ -113,8 +123,10 @@
         }
 
         .img {
+            text-align: center;
+
             img {
-                height: 200px;
+                height: 140px;
             }
 
             /*height: 140px;*/
