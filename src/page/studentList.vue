@@ -3,7 +3,7 @@
         <SideNav></SideNav>
         <div class="right-container">
             <Header class="header" :headerList="headerList"></Header>
-            <div class="right-content">
+            <div class="right-content white-color">
                 <div class="search-contain">
                     <el-form :inline="true" :model="formInline" class="demo-form-inline">
                         <el-form-item label="手机号码">
