@@ -147,6 +147,9 @@
 
             .ins {
                 margin-top: 26px;
+                width: 300px;
+                margin: auto;
+                margin-top: 20px;
             }
         }
 
