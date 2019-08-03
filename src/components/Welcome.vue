@@ -104,7 +104,6 @@
                 margin-top: 20px;
                 height: 310px;
 
-
                 &:last-child {
                     margin-right: 0px;
                 }
@@ -112,26 +111,38 @@
 
             .row11 {
                 background: url('../../src/assets/img/welcome/orangePlus.png') center no-repeat;
+                background-size: 105%;
+
             }
 
             .row12 {
                 background: url('../../src/assets/img/welcome/blueIe.png') center no-repeat;
+                background-size: 105%;
+
             }
 
             .row13 {
                 background: url('../../src/assets/img/welcome/greenClass.png') center no-repeat;
+                background-size: 105%;
+
             }
 
             .row21 {
                 background: url('../../src/assets/img/welcome/redShow.png') center no-repeat;
+                background-size: 105%;
+
             }
 
             .row22 {
                 background: url('../../src/assets/img/welcome/orangeRedis.png') center no-repeat;
+                background-size: 105%;
+
             }
 
             .row23 {
                 background: url('../../src/assets/img/welcome/blueFlow.png') center no-repeat;
+                background-size: 105%;
+
             }
 
             .ins {
@@ -141,8 +152,8 @@
 
 
         .title {
-            height: 50px;
-            line-height: 50px;
+            height: 56px;
+            line-height: 56px;
             text-align: left;
             padding-left: 26px;
         }
