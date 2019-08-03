@@ -26,6 +26,10 @@ export default new Router({
         {
             path: '/addClass',
             component: r => require.ensure([], () => r(require('../page/addClass')), 'addClass')
+        },
+        {
+            path: '/subjectList',
+            component: r => require.ensure([], () => r(require('../page/subjectList')), 'subjectList')
         }
     ]
 })

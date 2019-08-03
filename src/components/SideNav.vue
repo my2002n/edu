@@ -67,7 +67,9 @@
                 </template>
                 <el-menu-item-group>
                     <el-menu-item index="1-1">新增学科</el-menu-item>
-                    <el-menu-item index="1-2">学科列表</el-menu-item>
+                    <el-menu-item index="1-2">
+                        <router-link to="/subjectList">学科列表</router-link>
+                    </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
             <el-submenu index="4">
