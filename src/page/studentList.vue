@@ -3,78 +3,80 @@
         <SideNav></SideNav>
         <div class="right-container">
             <Header class="header" :headerList="headerList"></Header>
-            <div class="search-contain">
-                <el-form :inline="true" :model="formInline" class="demo-form-inline">
-                    <el-form-item label="手机号码">
-                        <el-input v-model="formInline.user" placeholder="手机号码"></el-input>
-                    </el-form-item>
-                    <el-form-item label="姓名">
-                        <el-input v-model="formInline.user" placeholder="姓名"></el-input>
-                    </el-form-item>
-                    <el-form-item label="班级">
-                        <el-select v-model="formInline.region" placeholder="全部">
-                            <el-option label="区域一" value="shanghai"></el-option>
-                            <el-option label="区域二" value="beijing"></el-option>
-                        </el-select>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-button type="primary" @click="onSubmit">查询</el-button>
-                    </el-form-item>
-                </el-form>
-            </div>
-            <div class="content-contain">
-                <el-table :data="tableData" style="width: 100%">
-                    <el-table-column type="expand">
-                        <template slot-scope="props">
-                            <el-form label-position="left" inline class="demo-table-expand">
-                                <el-form-item label="商品名称">
-                                    <span>{{ props.row.name }}</span>
-                                </el-form-item>
-                                <el-form-item label="所属店铺">
-                                    <span>{{ props.row.shop }}</span>
-                                </el-form-item>
-                                <el-form-item label="商品 ID">
-                                    <span>{{ props.row.id }}</span>
-                                </el-form-item>
-                                <el-form-item label="店铺 ID">
-                                    <span>{{ props.row.shopId }}</span>
-                                </el-form-item>
-                                <el-form-item label="商品分类">
-                                    <span>{{ props.row.category }}</span>
-                                </el-form-item>
-                                <el-form-item label="店铺地址">
-                                    <span>{{ props.row.address }}</span>
-                                </el-form-item>
-                                <el-form-item label="商品描述">
-                                    <span>{{ props.row.desc }}</span>
-                                </el-form-item>
-                            </el-form>
-                        </template>
-                    </el-table-column>
-                    <el-table-column label="手机号码" prop="id">
-                    </el-table-column>
-                    <el-table-column label="姓名" prop="name">
-                    </el-table-column>
-                    <el-table-column label="出生日期" prop="desc">
-                    </el-table-column>
-                    <el-table-column label="性别" prop="desc">
-                    </el-table-column>
-                    <el-table-column label="备注" prop="desc">
-                    </el-table-column>
-                    <el-table-column label="操作">
-                        <template slot-scope="scope">
-                            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                            <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除
-                            </el-button>
-                        </template>
-                    </el-table-column>
-                </el-table>
-            </div>
-            <div class="footer-contain">
-                <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-                    :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="total, sizes, prev, pager, next, jumper"
-                    :total="400">
-                </el-pagination>
+            <div class="right-content">
+                <div class="search-contain">
+                    <el-form :inline="true" :model="formInline" class="demo-form-inline">
+                        <el-form-item label="手机号码">
+                            <el-input v-model="formInline.user" placeholder="手机号码"></el-input>
+                        </el-form-item>
+                        <el-form-item label="姓名">
+                            <el-input v-model="formInline.user" placeholder="姓名"></el-input>
+                        </el-form-item>
+                        <el-form-item label="班级">
+                            <el-select v-model="formInline.region" placeholder="全部">
+                                <el-option label="区域一" value="shanghai"></el-option>
+                                <el-option label="区域二" value="beijing"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item>
+                            <el-button type="primary" @click="onSubmit">查询</el-button>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <div class="content-contain">
+                    <el-table :data="tableData" style="width: 100%">
+                        <el-table-column type="expand">
+                            <template slot-scope="props">
+                                <el-form label-position="left" inline class="demo-table-expand">
+                                    <el-form-item label="商品名称">
+                                        <span>{{ props.row.name }}</span>
+                                    </el-form-item>
+                                    <el-form-item label="所属店铺">
+                                        <span>{{ props.row.shop }}</span>
+                                    </el-form-item>
+                                    <el-form-item label="商品 ID">
+                                        <span>{{ props.row.id }}</span>
+                                    </el-form-item>
+                                    <el-form-item label="店铺 ID">
+                                        <span>{{ props.row.shopId }}</span>
+                                    </el-form-item>
+                                    <el-form-item label="商品分类">
+                                        <span>{{ props.row.category }}</span>
+                                    </el-form-item>
+                                    <el-form-item label="店铺地址">
+                                        <span>{{ props.row.address }}</span>
+                                    </el-form-item>
+                                    <el-form-item label="商品描述">
+                                        <span>{{ props.row.desc }}</span>
+                                    </el-form-item>
+                                </el-form>
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="手机号码" prop="id">
+                        </el-table-column>
+                        <el-table-column label="姓名" prop="name">
+                        </el-table-column>
+                        <el-table-column label="出生日期" prop="desc">
+                        </el-table-column>
+                        <el-table-column label="性别" prop="desc">
+                        </el-table-column>
+                        <el-table-column label="备注" prop="desc">
+                        </el-table-column>
+                        <el-table-column label="操作">
+                            <template slot-scope="scope">
+                                <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                                <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除
+                                </el-button>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+                <div class="footer-contain">
+                    <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+                        :page-sizes="[100, 200, 300, 400]" :page-size="100"
+                        layout="total, sizes, prev, pager, next, jumper" :total="400">
+                    </el-pagination>
+                </div>
             </div>
         </div>
 
@@ -162,16 +164,18 @@
     }
 
     .search-contain {
-        margin-top: 20px;
-        padding-left: 16px
+        // margin-top: 20px;
+        padding-left: 20px;
+        padding-top: 24px;
     }
 
     .content-contain {
-        padding-left: 16px;
+        // padding-left: 16px;
     }
 
     .right-container {
         background: #ffffff;
+        height: 100%;
     }
 
 </style>
