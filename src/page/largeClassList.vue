@@ -3,81 +3,87 @@
         <SideNav></SideNav>
         <div class="right-container">
             <Header class="header" :headerList="headerList"></Header>
-            <div class="search-contain">
-                <el-form :inline="true" :model="formInline" class="demo-form-inline">
-                    <el-form-item label="选择日期">
-                        <el-date-picker v-model="dateValue" type="daterange" start-placeholder="开始日期"
-                            end-placeholder="结束日期" :default-time="['00:00:00', '23:59:59']">
-                        </el-date-picker>
-                    </el-form-item>
-                    <el-form-item label="班级">
-                        <el-select v-model="formInline.region" placeholder="全部">
-                            <el-option label="区域一" value="shanghai"></el-option>
-                            <el-option label="区域二" value="beijing"></el-option>
-                        </el-select>
-                    </el-form-item>
-                    <el-form-item label="讲师">
-                        <el-input v-model="formInline.user" placeholder="讲师"></el-input>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-button type="primary" @click="onSubmit">查询</el-button>
-                    </el-form-item>
-                </el-form>
+            <div class="right-content white-color">
+                <div class="search-contain">
+                    <el-form :inline="true" :model="formInline" class="demo-form-inline">
+                        <el-form-item label="选择日期">
+                            <el-date-picker v-model="dateValue" type="daterange" start-placeholder="开始日期"
+                                class="date-range-large" end-placeholder="结束日期"
+                                :default-time="['00:00:00', '23:59:59']">
+                            </el-date-picker>
+                        </el-form-item>
+                        <el-form-item label="班级">
+                            <el-input v-model="formInline.user" placeholder="请输入班级" class="class-input"></el-input>
+                        </el-form-item>
+                        <el-form-item label="讲师">
+                            <el-select v-model="formInline.region" placeholder="讲师" class="teacher-input">
+                                <el-option label="区域一" value="shanghai"></el-option>
+                                <el-option label="区域二" value="beijing"></el-option>
+                            </el-select>
+
+                        </el-form-item>
+                        <el-form-item label="课程名称">
+                            <el-select v-model="formInline.region" placeholder="课程名称" class="class-input">
+                                <el-option label="数学" value="shanghai"></el-option>
+                                <el-option label="区域二" value="beijing"></el-option>
+                            </el-select>
+
+                        </el-form-item>
+                        <el-form-item label="状态">
+                            <el-select v-model="formInline.region" placeholder="全部" class="status-input">
+                                <el-option label="区域一" value="shanghai"></el-option>
+                                <el-option label="区域二" value="beijing"></el-option>
+                            </el-select>
+
+                        </el-form-item>
+                        <el-form-item>
+                            <el-button type="primary" @click="onSubmit">查询</el-button>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <div class="content-contain">
+                    <el-table :data="tableData" style="width: 100%"
+                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}">
+                        <el-table-column label="开课时间" prop="id">
+                        </el-table-column>
+                        <el-table-column label="班级" prop="name">
+                        </el-table-column>
+                        <el-table-column label="课程名称" prop="desc">
+                        </el-table-column>
+                        <el-table-column label="讲师" prop="desc">
+                        </el-table-column>
+                        <el-table-column label="助教" prop="desc">
+                        </el-table-column>
+                        <el-table-column label="课程回放" prop="desc">
+                        </el-table-column>
+                        <el-table-column label="状态" prop="status">
+                        </el-table-column>
+                        <el-table-column label="操作">
+                            <template slot-scope="scope">
+                                <span class="operate">
+                                    <img src="../../src/assets/img/welcome/edit.png" alt="">
+                                </span>
+                                <span class="operate">
+                                    <img src="../../src/assets/img/welcome/add.png" alt="">
+                                </span>
+                                <span class="operate">
+                                    <img src="../../src/assets/img/welcome/book.png" alt="">
+                                </span>
+                                <span class="operate">
+                                    <img src="../../src/assets/img/welcome/delete.png" alt="">
+                                </span>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+                <div class="footer-contain">
+                    <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+                        :page-sizes="[100, 200, 300, 400]" :page-size="100"
+                        layout="total, sizes, prev, pager, next, jumper" :total="400">
+                    </el-pagination>
+                </div>
             </div>
-            <div class="content-contain">
-                <el-table :data="tableData" style="width: 100%">
-                    <el-table-column type="expand">
-                        <template slot-scope="props">
-                            <el-form label-position="left" inline class="demo-table-expand">
-                                <el-form-item label="商品名称">
-                                    <span>{{ props.row.name }}</span>
-                                </el-form-item>
-                                <el-form-item label="所属店铺">
-                                    <span>{{ props.row.shop }}</span>
-                                </el-form-item>
-                                <el-form-item label="商品 ID">
-                                    <span>{{ props.row.id }}</span>
-                                </el-form-item>
-                                <el-form-item label="店铺 ID">
-                                    <span>{{ props.row.shopId }}</span>
-                                </el-form-item>
-                                <el-form-item label="商品分类">
-                                    <span>{{ props.row.category }}</span>
-                                </el-form-item>
-                                <el-form-item label="店铺地址">
-                                    <span>{{ props.row.address }}</span>
-                                </el-form-item>
-                                <el-form-item label="商品描述">
-                                    <span>{{ props.row.desc }}</span>
-                                </el-form-item>
-                            </el-form>
-                        </template>
-                    </el-table-column>
-                    <el-table-column label="手机号码" prop="id">
-                    </el-table-column>
-                    <el-table-column label="姓名" prop="name">
-                    </el-table-column>
-                    <el-table-column label="出生日期" prop="desc">
-                    </el-table-column>
-                    <el-table-column label="性别" prop="desc">
-                    </el-table-column>
-                    <el-table-column label="备注" prop="desc">
-                    </el-table-column>
-                    <el-table-column label="操作">
-                        <template slot-scope="scope">
-                            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                            <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除
-                            </el-button>
-                        </template>
-                    </el-table-column>
-                </el-table>
-            </div>
-            <div class="footer-contain">
-                <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-                    :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="total, sizes, prev, pager, next, jumper"
-                    :total="400">
-                </el-pagination>
-            </div>
+
         </div>
 
     </div>
@@ -95,7 +101,7 @@
         data() {
             return {
                 dateValue: "",
-                headerList: ['会员', '欢迎', '欢迎页'],
+                headerList: ['直播', '直播大班课', '大班课列表'],
                 formInline: {
                     user: '',
                     region: ''
@@ -104,34 +110,38 @@
                     id: '12987122',
                     name: '好滋好味鸡蛋仔',
                     category: '江浙小吃、小吃零食',
-                    desc: '荷兰优质淡奶，奶香浓而不腻',
+                    desc: '数学',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
-                    shopId: '10333'
+                    shopId: '10333',
+                    status: '开课中'
                 }, {
                     id: '12987123',
                     name: '好滋好味鸡蛋仔',
                     category: '江浙小吃、小吃零食',
-                    desc: '荷兰优质淡奶，奶香浓而不腻',
+                    desc: '数学',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
-                    shopId: '10333'
+                    shopId: '10333',
+                    status: '开课中'
                 }, {
                     id: '12987125',
                     name: '好滋好味鸡蛋仔',
                     category: '江浙小吃、小吃零食',
-                    desc: '荷兰优质淡奶，奶香浓而不腻',
+                    desc: '数学',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
-                    shopId: '10333'
+                    shopId: '10333',
+                    status: '开课中'
                 }, {
                     id: '12987126',
                     name: '好滋好味鸡蛋仔',
                     category: '江浙小吃、小吃零食',
-                    desc: '荷兰优质淡奶，奶香浓而不腻',
+                    desc: '数学',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
-                    shopId: '10333'
+                    shopId: '10333',
+                    status: '开课中'
                 }],
                 handleSizeChange(val) {
                     console.log(`每页 ${val} 条`);
@@ -165,26 +175,75 @@
     }
 
     .search-contain {
-        margin-top: 20px;
-        padding-left: 16px
+        // margin-top: 20px;
+        padding-left: 20px;
+        padding-top: 24px;
     }
 
-    .content-contain {
-        padding-left: 16px;
-    }
-
-    .right-container {
-        background: #ffffff;
+    .operate {
+        cursor: pointer;
+        margin-right: 20px;
     }
 
 </style>
-<style lang='less'>
-    .content-contain {
-        table {
-            thead tr {
-                background: #DFE6EC
+<style lang="less">
+    .date-range-large {
+        width: 224px !important;
+    }
+
+    .status-input {
+        width: 84px !important;
+    }
+
+    .teacher-input {
+        width: 100px !important;
+    }
+
+    .class-input {
+        width: 150px !important;
+    }
+
+    .el-table {
+        border: 1px solid rgba(223, 230, 236, 1) !important;
+    }
+
+    .el-table__header-wrapper {
+        height: 40px !important;
+        background: rgba(239, 241, 246, 1) !important;
+    }
+
+    .el-table__body-wrapper {
+        .el-row {
+            margin-bottom: 16px !important;
+
+            &:first-child {
+                margin-top: 10px !important;
             }
         }
+
+        tbody {
+
+            .table__row,
+            td {
+                padding: 8px 0px !important;
+
+            }
+
+        }
+
+        .el-table__expanded-cell {
+            padding-left: 60px !important;
+        }
+    }
+
+
+    .static-input {
+        width: 150px !important;
+        height: 40px !important;
+    }
+
+    .el-form-item__content {
+        margin-right: 20px
     }
 
 </style>

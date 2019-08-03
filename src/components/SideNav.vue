@@ -94,7 +94,7 @@
                 <el-menu-item-group>
                     <el-menu-item index="1-1">新增直播大班课</el-menu-item>
                     <el-menu-item index="1-2">
-                        <router-link to="/login">大班课列表</router-link>
+                        <router-link to="/largeClassList">大班课列表</router-link>
 
                     </el-menu-item>
                     <el-menu-item index="1-3">进入教室</el-menu-item>

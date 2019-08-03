@@ -7,10 +7,12 @@
                 <div class="search-contain">
                     <el-form :inline="true" :model="formInline" class="demo-form-inline">
                         <el-form-item label="手机号码">
-                            <el-input v-model="formInline.user" placeholder="手机号码" class="static-input"></el-input>
+                            <el-input v-model="formInline.user" placeholder="手机号码" class="static-input">
+                            </el-input>
                         </el-form-item>
                         <el-form-item label="姓名">
-                            <el-input v-model="formInline.user" placeholder="姓名" class="static-input"></el-input>
+                            <el-input v-model="formInline.user" placeholder="姓名" class="static-input">
+                            </el-input>
                         </el-form-item>
                         <el-form-item label="班级">
                             <el-select v-model="formInline.region" placeholder="全部" class="static-input">
@@ -149,9 +151,6 @@
                         </el-table-column>
                         <el-table-column label="操作">
                             <template slot-scope="scope">
-                                <!-- <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                                <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除
-                                </el-button> -->
                                 <span class="operate">
                                     <img src="../../src/assets/img/welcome/edit.png" alt="">
                                 </span>
