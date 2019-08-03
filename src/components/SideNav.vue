@@ -174,6 +174,10 @@
         width: 224px;
         float: left;
 
+        .el-menu {
+            width: 224px;
+        }
+
         .title {
             height: 80px;
 
@@ -202,16 +206,19 @@
             height: 36px;
             /*background: #22345E;*/
             background: rgb(56, 73, 114);
-            .flex(row, space-between, center,nowrap);
+            .flex(row, space-between, center, nowrap);
+
             .deepColor {
                 background: #22345E;
             }
+
             span {
                 height: 100%;
                 width: 25%;
                 cursor: pointer;
                 text-align: center;
-                img{
+
+                img {
                     margin-top: 8px;
                 }
 
@@ -257,6 +264,7 @@
                 display: inline-block;
             }
         }
+
         .el-menu {
             a {
                 color: #FFFFFF;
@@ -269,12 +277,13 @@
 <style lang='less'>
     .left-container {
         .el-submenu__title {
-            line-height: 40px!important;
-            height: 40px!important;
+            line-height: 40px !important;
+            height: 40px !important;
             padding-left: 60px !important;
-            &:hover{
-                background:rgba(85,168,253,0.3)!important;
-                color: #55A8FD!important;
+
+            &:hover {
+                background: rgba(85, 168, 253, 0.3) !important;
+                color: #55A8FD !important;
             }
         }
 
@@ -283,18 +292,21 @@
                 padding-left: 65px !important;
 
             }
+
             .el-menu-item {
-                line-height: 40px!important;
-                height: 40px!important;
-                &:hover{
-                    background:rgba(85,168,253,0.3)!important;
-                    color: #55A8FD!important;
+                line-height: 40px !important;
+                height: 40px !important;
+
+                &:hover {
+                    background: rgba(85, 168, 253, 0.3) !important;
+                    color: #55A8FD !important;
                 }
             }
 
         }
+
         .el-submenu__icon-arrow {
-            &::before{
+            &::before {
                 /*position: relative;*/
                 /*left: 10px;*/
                 color: #fff;

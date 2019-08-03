@@ -42,11 +42,6 @@
             width: 16px;
             height: 18px;
             padding: 0px 12px;
-
-            img {
-                position: relative;
-                top: 3px;
-            }
         }
 
         height:40px;
@@ -59,6 +54,12 @@
         .left {
             float: left;
             width: calc(100% - 326px);
+
+            img {
+                position: relative;
+                top: 3px;
+            }
+
         }
 
         .right {
