@@ -7,13 +7,13 @@
                 <div class="search-contain">
                     <el-form :inline="true" :model="formInline" class="demo-form-inline">
                         <el-form-item label="手机号码">
-                            <el-input v-model="formInline.user" placeholder="手机号码"></el-input>
+                            <el-input v-model="formInline.user" placeholder="手机号码" class="static-input"></el-input>
                         </el-form-item>
                         <el-form-item label="姓名">
-                            <el-input v-model="formInline.user" placeholder="姓名"></el-input>
+                            <el-input v-model="formInline.user" placeholder="姓名" class="static-input"></el-input>
                         </el-form-item>
                         <el-form-item label="班级">
-                            <el-select v-model="formInline.region" placeholder="全部">
+                            <el-select v-model="formInline.region" placeholder="全部" class="static-input">
                                 <el-option label="区域一" value="shanghai"></el-option>
                                 <el-option label="区域二" value="beijing"></el-option>
                             </el-select>
@@ -24,31 +24,116 @@
                     </el-form>
                 </div>
                 <div class="content-contain">
-                    <el-table :data="tableData" style="width: 100%">
+                    <el-table :data="tableData" style="width: 100%"
+                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}">
                         <el-table-column type="expand">
                             <template slot-scope="props">
                                 <el-form label-position="left" inline class="demo-table-expand">
-                                    <el-form-item label="商品名称">
-                                        <span>{{ props.row.name }}</span>
-                                    </el-form-item>
-                                    <el-form-item label="所属店铺">
-                                        <span>{{ props.row.shop }}</span>
-                                    </el-form-item>
-                                    <el-form-item label="商品 ID">
-                                        <span>{{ props.row.id }}</span>
-                                    </el-form-item>
-                                    <el-form-item label="店铺 ID">
-                                        <span>{{ props.row.shopId }}</span>
-                                    </el-form-item>
-                                    <el-form-item label="商品分类">
-                                        <span>{{ props.row.category }}</span>
-                                    </el-form-item>
-                                    <el-form-item label="店铺地址">
-                                        <span>{{ props.row.address }}</span>
-                                    </el-form-item>
-                                    <el-form-item label="商品描述">
-                                        <span>{{ props.row.desc }}</span>
-                                    </el-form-item>
+                                    <!-- 第一行 -->
+                                    <el-row :gutter="20">
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/time.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/greyBook.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/greyPerson.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/greyPerson.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                    </el-row>
+                                    <!-- 第二行 -->
+                                    <el-row :gutter="20">
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/time.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/greyBook.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/greyPerson.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/greyPerson.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                    </el-row>
+                                    <!-- 第三行 -->
+                                    <el-row :gutter="20">
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/time.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/greyBook.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/greyPerson.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                        <el-col :span="6">
+                                            <div class="grid-content bg-purple">
+                                                <span>
+                                                    <img src="../../src/assets/img/welcome/greyPerson.png" alt="">
+                                                </span>
+                                                {{ props.row.name }}
+                                            </div>
+                                        </el-col>
+                                    </el-row>
                                 </el-form>
                             </template>
                         </el-table-column>
@@ -64,9 +149,18 @@
                         </el-table-column>
                         <el-table-column label="操作">
                             <template slot-scope="scope">
-                                <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                                <!-- <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
                                 <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除
-                                </el-button>
+                                </el-button> -->
+                                <span class="operate">
+                                    <img src="../../src/assets/img/welcome/edit.png" alt="">
+                                </span>
+                                <span class="operate">
+                                    <img src="../../src/assets/img/welcome/add.png" alt="">
+                                </span>
+                                <span class="operate">
+                                    <img src="../../src/assets/img/welcome/book.png" alt="">
+                                </span>
                             </template>
                         </el-table-column>
                     </el-table>
@@ -94,7 +188,7 @@
         },
         data() {
             return {
-                headerList: ['会员', '欢迎', '欢迎页'],
+                headerList: ['会员', '学生', '学生列表'],
                 formInline: {
                     user: '',
                     region: ''
@@ -117,14 +211,6 @@
                     shopId: '10333'
                 }, {
                     id: '12987125',
-                    name: '好滋好味鸡蛋仔',
-                    category: '江浙小吃、小吃零食',
-                    desc: '荷兰优质淡奶，奶香浓而不腻',
-                    address: '上海市普陀区真北路',
-                    shop: '王小虎夫妻店',
-                    shopId: '10333'
-                }, {
-                    id: '12987126',
                     name: '好滋好味鸡蛋仔',
                     category: '江浙小吃、小吃零食',
                     desc: '荷兰优质淡奶，奶香浓而不腻',
@@ -176,6 +262,64 @@
     .right-container {
         background: #ffffff;
         height: 100%;
+    }
+
+    .operate {
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .grid-content {
+        span {
+            position: relative;
+            margin-right: 5px;
+            top: 3px;
+        }
+    }
+
+</style>
+<style lang="less">
+    .el-table {
+        border: 1px solid rgba(223, 230, 236, 1) !important;
+    }
+
+    .el-table__header-wrapper {
+        height: 40px !important;
+        background: rgba(239, 241, 246, 1) !important;
+    }
+
+    .el-table__body-wrapper {
+        .el-row {
+            margin-bottom: 16px !important;
+
+            &:first-child {
+                margin-top: 10px !important;
+            }
+        }
+
+        tbody {
+
+            .table__row,
+            td {
+                padding: 8px 0px !important;
+
+            }
+
+        }
+
+        .el-table__expanded-cell {
+            padding-left: 60px !important;
+        }
+    }
+
+
+    .static-input {
+        width: 150px !important;
+        height: 40px !important;
+    }
+
+    .el-form-item__content {
+        margin-right: 20px
     }
 
 </style>
