@@ -27,7 +27,7 @@
             <span v-if="activeTab === 'Member'">会员</span>
             <span v-if="activeTab === 'Show'">直播</span>
         </div>
-        <el-menu default-active="2" class="el-menu-vertical-demo" background-color="#22345E" text-color="#fff"
+        <el-menu default-active="21" class="el-menu-vertical-demo" background-color="#22345E" text-color="#fff"
             active-text-color="#55A8FD" v-if="activeTab === 'Member'" :default-openeds="openeds">
             <el-submenu index="1">
                 <template slot="title">
@@ -99,8 +99,8 @@
             </el-submenu>
         </el-menu>
         <!-- 第二个 -->
-        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
-            background-color="#22345E" text-color="#fff" active-text-color="#55A8FD" v-if="activeTab === 'Show'">
+        <el-menu default-active="2" class="el-menu-vertical-demo"
+            background-color="#22345E" text-color="#fff" active-text-color="#55A8FD" v-if="activeTab === 'Show'" :default-openeds="openeds">
             <el-submenu index="2">
                 <template slot="title">
                     <!-- <div class="circle"></div> -->
@@ -175,6 +175,8 @@
                 if (index === 4) {
                     this.activeTab = 'Text'
                 }
+
+                console.log('this.activeTab', this.activeTab)
 
             }
 

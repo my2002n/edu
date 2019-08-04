@@ -15,13 +15,6 @@
                         <el-form-item label="班级">
                             <el-input v-model="formInline.user" placeholder="请输入班级" class="class-input"></el-input>
                         </el-form-item>
-                        <el-form-item label="讲师">
-                            <el-select v-model="formInline.region" placeholder="讲师" class="teacher-input">
-                                <el-option label="区域一" value="shanghai"></el-option>
-                                <el-option label="区域二" value="beijing"></el-option>
-                            </el-select>
-
-                        </el-form-item>
                         <el-form-item label="课程名称">
                             <el-select v-model="formInline.region" placeholder="课程名称" class="class-input">
                                 <el-option label="数学" value="shanghai"></el-option>
