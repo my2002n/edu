@@ -1,6 +1,6 @@
 <template>
     <div class='home-container'>
-        <SideNav></SideNav>
+        <SideNav :openeds="openeds"></SideNav>
         <div class="right-container">
             <Header class="header" :headerList="headerList"></Header>
             <div class="right-content white-color">
@@ -62,6 +62,7 @@
         data() {
             return {
                 headerList: ['会员', '学科', '学科列表'],
+                openeds: ['4', '4-2'],
                 formInline: {
                     user: '',
                     region: ''

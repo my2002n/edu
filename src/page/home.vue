@@ -26,7 +26,7 @@
         data() {
             return {
                 headerList: ['会员', '欢迎', '欢迎页'],
-                openeds: ['2', '2-1']
+                openeds: ['1', '1-1']
             }
         },
         methods: {
