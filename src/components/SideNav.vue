@@ -328,13 +328,7 @@
                     background: rgba(85, 168, 253, 0.3) !important;
                     color: #55A8FD !important;
                 }
-            }
-
-            .router-link-active {
-
-                // color: #55A8FD !important;
-
-                &:hover {
+                a:hover{
                     color: #55A8FD !important;
                 }
             }
