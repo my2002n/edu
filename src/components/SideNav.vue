@@ -27,6 +27,7 @@
             <span v-if="activeTab === 'Member'">会员</span>
             <span v-if="activeTab === 'Show'">直播</span>
         </div>
+        <!--第一个-->
         <el-menu default-active="21" class="el-menu-vertical-demo" background-color="#22345E" text-color="#fff"
             active-text-color="#55A8FD" v-if="activeTab === 'Member'" :default-openeds="openeds">
             <el-submenu index="1">
@@ -70,8 +71,7 @@
             <el-submenu index="3">
                 <template slot="title">
                     <!-- <div class="circle"></div> -->
-                    <span class="nav-title">
-                        学科
+                    <span class="nav-title">学科
                     </span>
                 </template>
                 <el-menu-item-group>
@@ -309,7 +309,14 @@
 
         .el-menu-item-group {
             ul li {
-                padding-left: 65px !important;
+                padding: 0px !important;
+                a{
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    padding-left: 65px !important;
+
+                }
 
             }
 
