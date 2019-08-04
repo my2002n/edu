@@ -139,17 +139,17 @@
                                 </el-form>
                             </template>
                         </el-table-column>
-                        <el-table-column label="手机号码" prop="id">
+                        <el-table-column label="手机号码" prop="id"  width="160px">
                         </el-table-column>
-                        <el-table-column label="姓名" prop="name">
+                        <el-table-column label="姓名" prop="name" width="140px">
                         </el-table-column>
-                        <el-table-column label="出生日期" prop="desc">
+                        <el-table-column label="出生日期" prop="desc" width="140px">
                         </el-table-column>
-                        <el-table-column label="性别" prop="desc">
+                        <el-table-column label="性别" prop="sex" width="80px">
                         </el-table-column>
-                        <el-table-column label="备注" prop="desc">
+                        <el-table-column label="备注" prop="category">
                         </el-table-column>
-                        <el-table-column label="操作">
+                        <el-table-column label="操作" width="140px">
                             <template slot-scope="scope">
                                 <span class="operate">
                                     <img src="../../src/assets/img/welcome/edit.png" alt="">
@@ -193,29 +193,32 @@
                     region: ''
                 },
                 tableData: [{
-                    id: '12987122',
-                    name: '好滋好味鸡蛋仔',
-                    category: '江浙小吃、小吃零食',
-                    desc: '荷兰优质淡奶，奶香浓而不腻',
+                    id: '15694267318',
+                    name: '张夏利',
+                    category: '这是今天报名的学生',
+                    desc: '1994-08-23',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
-                    shopId: '10333'
+                    shopId: '10333',
+                    sex: '女'
                 }, {
-                    id: '12987123',
-                    name: '好滋好味鸡蛋仔',
-                    category: '江浙小吃、小吃零食',
-                    desc: '荷兰优质淡奶，奶香浓而不腻',
+                    id: '15694267318',
+                    name: '小红',
+                    category: '这个孩子是第一次学习课程需要盯着',
+                    desc: '1994-08-24',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
-                    shopId: '10333'
+                    shopId: '10333',
+                    sex: '女'
                 }, {
-                    id: '12987125',
-                    name: '好滋好味鸡蛋仔',
-                    category: '江浙小吃、小吃零食',
-                    desc: '荷兰优质淡奶，奶香浓而不腻',
+                    id: '15694267316',
+                    name: '王小五',
+                    category: '他还没有交学分费，要下次重新过一下',
+                    desc: '1994-08-23',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
-                    shopId: '10333'
+                    shopId: '10333',
+                    sex: '女'
                 }],
                 handleSizeChange(val) {
                     console.log(`每页 ${val} 条`);

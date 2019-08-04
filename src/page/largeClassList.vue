@@ -1,7 +1,7 @@
 <template>
     <div class='home-container'>
         <SideNav></SideNav>
-        <div class="right-container">
+        <div class="right-container largeList">
             <Header class="header" :headerList="headerList"></Header>
             <div class="right-content white-color">
                 <div class="search-contain">
@@ -44,9 +44,9 @@
                 <div class="content-contain">
                     <el-table :data="tableData" style="width: 100%"
                         :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}">
-                        <el-table-column label="开课时间" prop="id">
+                        <el-table-column label="开课时间" prop="id" width="160px">
                         </el-table-column>
-                        <el-table-column label="班级" prop="name">
+                        <el-table-column label="班级" prop="name" width="120px">
                         </el-table-column>
                         <el-table-column label="课程名称" prop="desc">
                         </el-table-column>
@@ -54,11 +54,18 @@
                         </el-table-column>
                         <el-table-column label="助教" prop="desc">
                         </el-table-column>
-                        <el-table-column label="课程回放" prop="desc">
+                        <el-table-column label="课程回放" prop="back" width="100px">
+                            <template slot-scope="scope">
+                                <el-button
+                                    type="text"
+                                    size="small">
+                                    {{scope.row.back}}
+                                </el-button>
+                            </template>
                         </el-table-column>
-                        <el-table-column label="状态" prop="status">
+                        <el-table-column label="状态" prop="status" width="100px">
                         </el-table-column>
-                        <el-table-column label="操作">
+                        <el-table-column label="操作" width="180px">
                             <template slot-scope="scope">
                                 <span class="operate">
                                     <img src="../../src/assets/img/welcome/edit.png" alt="">
@@ -107,41 +114,45 @@
                     region: ''
                 },
                 tableData: [{
-                    id: '12987122',
-                    name: '好滋好味鸡蛋仔',
+                    id: '2019-09-26 12:30',
+                    name: '暑期提高加速班',
                     category: '江浙小吃、小吃零食',
                     desc: '数学',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
                     shopId: '10333',
-                    status: '开课中'
+                    status: '开课中',
+                    back: '回放'
                 }, {
-                    id: '12987123',
-                    name: '好滋好味鸡蛋仔',
+                    id: '2019-09-26 12:30',
+                    name: '暑期提高加速班',
                     category: '江浙小吃、小吃零食',
                     desc: '数学',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
                     shopId: '10333',
-                    status: '开课中'
+                    status: '开课中',
+                    back: '回放'
                 }, {
-                    id: '12987125',
-                    name: '好滋好味鸡蛋仔',
+                    id: '2019-09-26 12:30',
+                    name: '暑期提高加速班',
                     category: '江浙小吃、小吃零食',
                     desc: '数学',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
                     shopId: '10333',
-                    status: '开课中'
+                    status: '开课中',
+                    back: '回放'
                 }, {
-                    id: '12987126',
-                    name: '好滋好味鸡蛋仔',
+                    id: '2019-09-26 12:30',
+                    name: '数学',
                     category: '江浙小吃、小吃零食',
                     desc: '数学',
                     address: '上海市普陀区真北路',
                     shop: '王小虎夫妻店',
                     shopId: '10333',
-                    status: '开课中'
+                    status: '开课中',
+                    back: '回放'
                 }],
                 handleSizeChange(val) {
                     console.log(`每页 ${val} 条`);
@@ -241,9 +252,18 @@
         width: 150px !important;
         height: 40px !important;
     }
+    .largeList {
+        .el-form-item__content {
+            margin-right: 0px!important;
+        }
+        .el-table th:first-child>.cell:first-child{
+            /*padding-left: 20px!important;*/
 
-    .el-form-item__content {
-        margin-right: 20px
+        }
+        .el-table__body-wrapper tr:first-child > .cell:first-child{
+            /*padding-left: 20px!important;*/
+        }
     }
+
 
 </style>

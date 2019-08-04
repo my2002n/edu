@@ -102,8 +102,8 @@
                 margin-right: 20px;
                 background: #ffffff;
                 margin-top: 20px;
-                height: 310px;
-
+                /*height: 230px;*/
+                height: 35vh;
                 &:last-child {
                     margin-right: 0px;
                 }
@@ -111,37 +111,37 @@
 
             .row11 {
                 background: url('../../src/assets/img/welcome/orangePlus.png') center no-repeat;
-                background-size: 105%;
+                background-size: 105% 105%
 
             }
 
             .row12 {
                 background: url('../../src/assets/img/welcome/blueIe.png') center no-repeat;
-                background-size: 105%;
+                background-size: 105% 105%
 
             }
 
             .row13 {
                 background: url('../../src/assets/img/welcome/greenClass.png') center no-repeat;
-                background-size: 105%;
+                background-size: 105% 105%
 
             }
 
             .row21 {
                 background: url('../../src/assets/img/welcome/redShow.png') center no-repeat;
-                background-size: 105%;
+                background-size: 105% 105%
 
             }
 
             .row22 {
                 background: url('../../src/assets/img/welcome/orangeRedis.png') center no-repeat;
-                background-size: 105%;
+                background-size: 105% 105%
 
             }
 
             .row23 {
                 background: url('../../src/assets/img/welcome/blueFlow.png') center no-repeat;
-                background-size: 105%;
+                background-size: 105% 105%
 
             }
 
@@ -168,7 +168,8 @@
             //     height: 140px;
             // }
 
-            height: 140px;
+            /*height: 70px;*/
+            height: 12vh;
             /*background-size: 100%;*/
 
         }
