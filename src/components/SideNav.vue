@@ -28,7 +28,7 @@
             <span v-if="activeTab === 'Show'">直播</span>
         </div>
         <!--第一个-->
-        <el-menu default-active="21" class="el-menu-vertical-demo" background-color="#22345E" text-color="#fff"
+        <el-menu default-active="2" class="el-menu-vertical-demo" background-color="#22345E" text-color="#fff"
             active-text-color="#55A8FD" v-if="activeTab === 'Member'" :default-openeds="openeds">
             <el-submenu index="1">
                 <template slot="title">
