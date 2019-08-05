@@ -139,7 +139,7 @@
                                 </el-form>
                             </template>
                         </el-table-column>
-                        <el-table-column label="手机号码" prop="id"  width="160px">
+                        <el-table-column label="手机号码" prop="id" width="160px">
                         </el-table-column>
                         <el-table-column label="姓名" prop="name" width="140px">
                         </el-table-column>
@@ -288,7 +288,21 @@
 
     .el-table__header-wrapper {
         height: 40px !important;
+
+        .el-table__header {
+            td {
+                padding: 8px 0px !important;
+
+            }
+        }
+
         background: rgba(239, 241, 246, 1) !important;
+    }
+
+    .el-table__header tr,
+    .el-table__header th {
+        padding: 0 !important;
+        height: 40px !important;
     }
 
     .el-table__body-wrapper {
