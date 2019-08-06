@@ -240,7 +240,7 @@
 
             .table__row,
             td {
-                padding: 4px 0px !important;
+                padding: 8px 0px !important;
 
             }
 

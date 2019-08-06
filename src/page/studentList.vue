@@ -286,6 +286,13 @@
         }
     }
 
+    .bg-purple {
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
 </style>
 <style lang="less">
     .el-table {
