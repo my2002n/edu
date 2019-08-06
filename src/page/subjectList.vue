@@ -167,6 +167,12 @@
         background: rgba(239, 241, 246, 1) !important;
     }
 
+    .el-table__header tr,
+    .el-table__header th {
+        padding: 0 !important;
+        height: 40px !important;
+    }
+
     .el-table__body-wrapper {
         .el-row {
             margin-bottom: 16px !important;

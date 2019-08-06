@@ -39,13 +39,13 @@
                         :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}">
                         <el-table-column label="开课时间" prop="id" width="160px">
                         </el-table-column>
-                        <el-table-column label="班级" prop="name" width="120px">
+                        <el-table-column label="班级" prop="name" width="160px">
                         </el-table-column>
                         <el-table-column label="课程名称" prop="desc">
                         </el-table-column>
-                        <el-table-column label="讲师" prop="desc">
+                        <el-table-column label="讲师" prop="desc" width="120px">
                         </el-table-column>
-                        <el-table-column label="助教" prop="desc">
+                        <el-table-column label="助教" prop="desc" width="120px">
                         </el-table-column>
                         <el-table-column label="课程回放" prop="back" width="100px">
                             <template slot-scope="scope">
@@ -56,7 +56,7 @@
                         </el-table-column>
                         <el-table-column label="状态" prop="status" width="100px">
                         </el-table-column>
-                        <el-table-column label="操作" width="180px">
+                        <el-table-column label="操作" width="200px">
                             <template slot-scope="scope">
                                 <span class="operate">
                                     <img src="../../src/assets/img/welcome/edit.png" alt="">
@@ -196,6 +196,12 @@
 
 </style>
 <style lang="less">
+    .el-table__header tr,
+    .el-table__header th {
+        padding: 0 !important;
+        height: 40px !important;
+    }
+
     .date-range-large {
         width: 224px !important;
     }
@@ -257,12 +263,12 @@
         }
 
         .el-table th:first-child>.cell:first-child {
-            /*padding-left: 20px!important;*/
+            padding-left: 15px !important;
 
         }
 
-        .el-table__body-wrapper tr:first-child>.cell:first-child {
-            /*padding-left: 20px!important;*/
+        .el-table__body-wrapper tr td>.cell:first-child {
+            padding-left: 15px !important;
         }
     }
 
