@@ -141,6 +141,11 @@
     .operate {
         cursor: pointer;
         margin-right: 20px;
+
+        img {
+            width: 14px;
+            height: 14px;
+        }
     }
 
     .grid-content {

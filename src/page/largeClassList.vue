@@ -49,9 +49,7 @@
                         </el-table-column>
                         <el-table-column label="课程回放" prop="back" width="100px">
                             <template slot-scope="scope">
-                                <el-button
-                                    type="text"
-                                    size="small">
+                                <el-button type="text" size="small">
                                     {{scope.row.back}}
                                 </el-button>
                             </template>
@@ -69,7 +67,7 @@
                                 <span class="operate">
                                     <img src="../../src/assets/img/welcome/book.png" alt="">
                                 </span>
-                                <span class="operate">
+                                <span class="operate delete-icon">
                                     <img src="../../src/assets/img/welcome/delete.png" alt="">
                                 </span>
                             </template>
@@ -187,6 +185,13 @@
     .operate {
         cursor: pointer;
         margin-right: 20px;
+
+        img {
+            width: 14px;
+            height: 14px;
+        }
+
+        // .delete-icon {}
     }
 
 </style>
@@ -245,18 +250,20 @@
         width: 150px !important;
         height: 40px !important;
     }
+
     .largeList {
         .el-form-item__content {
-            margin-right: 0px!important;
+            margin-right: 0px !important;
         }
-        .el-table th:first-child>.cell:first-child{
+
+        .el-table th:first-child>.cell:first-child {
             /*padding-left: 20px!important;*/
 
         }
-        .el-table__body-wrapper tr:first-child > .cell:first-child{
+
+        .el-table__body-wrapper tr:first-child>.cell:first-child {
             /*padding-left: 20px!important;*/
         }
     }
-
 
 </style>

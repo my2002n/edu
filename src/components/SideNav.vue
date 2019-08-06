@@ -101,8 +101,8 @@
             </el-submenu>
         </el-menu>
         <!-- 第二个 -->
-        <el-menu default-active="2" class="el-menu-vertical-demo"
-            background-color="#22345E" text-color="#fff" active-text-color="#55A8FD" v-if="activeTab === 'Show'" :default-openeds="openeds">
+        <el-menu default-active="2" class="el-menu-vertical-demo" background-color="#22345E" text-color="#fff"
+            active-text-color="#55A8FD" v-if="activeTab === 'Show'" :default-openeds="openeds">
             <el-submenu index="2">
                 <template slot="title">
                     <!-- <div class="circle"></div> -->
@@ -326,7 +326,8 @@
         .el-menu-item-group {
             ul li {
                 padding: 0px !important;
-                a{
+
+                a {
                     width: 100%;
                     height: 100%;
                     display: block;
@@ -344,15 +345,16 @@
                     background: rgba(85, 168, 253, 0.3) !important;
                     color: #55A8FD !important;
                 }
-                a:hover{
+
+                a:hover {
                     color: #55A8FD !important;
                 }
             }
 
-            /*.router-link-exact-active{*/
-            /*    background: rgba(85, 168, 253, 0.3) !important;*/
-            /*    color: #55A8FD !important;*/
-            /*}*/
+            .router-link-exact-active {
+                // background: rgba(85, 168, 253, 0.3) !important;
+                color: #55A8FD !important;
+            }
 
         }
 
