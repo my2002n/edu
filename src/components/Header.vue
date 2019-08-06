@@ -54,8 +54,8 @@
         width: 73px;
         height: 34px;
         border-radius: 2px;
-        opacity: 0.2733;
-        border: 1px solid rgba(85, 168, 253, 1);
+        // opacity: 0.2733;
+        border: 1px solid rgba(85, 168, 253, 0.2733);
         font-size: 14px;
         color: #55A8FD;
 
@@ -63,14 +63,14 @@
             width: 10px;
             height: 12px;
             position: relative;
-            left: 10px;
+            left: 13px;
             top: 8px;
         }
 
         span {
             position: relative;
-            left: 10px;
-            top: 6px;
+            left: 13px;
+            top: 7px;
         }
     }
 
@@ -120,6 +120,7 @@
             display: inline-block;
             position: relative;
             top: 10px;
+            left: 4px;
 
             span {
                 display: block;
