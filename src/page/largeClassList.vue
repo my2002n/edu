@@ -36,7 +36,7 @@
                 </div>
                 <div class="content-contain">
                     <el-table :data="tableData" style="width: 100%"
-                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}" stripe>
+                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}" stripe class="largeClassTale">
                         <el-table-column label="开课时间" prop="id" width="160px">
                         </el-table-column>
                         <el-table-column label="班级" prop="name" width="160px">
@@ -227,25 +227,28 @@
         background: rgba(239, 241, 246, 1) !important;
     }
 
-    .el-table__body-wrapper {
-        .el-row {
-            margin-bottom: 16px !important;
+    .largeClassTale {
+        .el-table__body-wrapper {
+            .el-row {
+                margin-bottom: 16px !important;
 
-            &:first-child {
-                margin-top: 10px !important;
-            }
-        }
-
-        tbody {
-
-            .table__row,
-            td {
-                padding: 8px 0px !important;
-
+                &:first-child {
+                    margin-top: 10px !important;
+                }
             }
 
+            tbody {
+
+                .table__row,
+                td {
+                    padding: 4px 0px !important;
+
+                }
+
+            }
         }
     }
+
 
 
     .static-input {
