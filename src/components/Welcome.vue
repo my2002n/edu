@@ -5,6 +5,7 @@
             <div class="row11">
                 <div class="title">
                     有效期: 2019-10-12
+                    <img src="../../src/assets/img/welcome/orangePlusRight.png" alt="">
                 </div>
                 <div class="img test">
                     <img src="../../src/assets/img/welcome/orangePlus.png" alt="">
@@ -15,6 +16,7 @@
             <div class="row12">
                 <div class="title">
                     未配置
+                    <img src="../../src/assets/img/welcome/blueIeRight.png" alt="">
                 </div>
                 <div class="img">
                     <img src="../../src/assets/img/welcome/blueIe.png" alt="">
@@ -25,6 +27,7 @@
             <div class="row13">
                 <div class="title">
                     同时直播数：30并发
+                    <img src="../../src/assets/img/welcome/greenClassRight.png" alt="">
                 </div>
                 <div class="img">
                     <img src="../../src/assets/img/welcome/greenClass.png" alt="">
@@ -37,6 +40,7 @@
             <div class="row21">
                 <div class="title">
                     剩余：89088播点
+                    <img src="../../src/assets/img/welcome/redShowRight.png" alt="">
                 </div>
                 <div class="img">
                     <img src="../../src/assets/img/welcome/redShow.png" alt="">
@@ -47,6 +51,7 @@
             <div class="row22">
                 <div class="title">
                     剩余：98/1000G
+                    <img src="../../src/assets/img/welcome/orangeRedisRight.png" alt="">
                 </div>
                 <div class="img">
                     <img src="../../src/assets/img/welcome/orangeRedis.png" alt="">
@@ -57,6 +62,7 @@
             <div class="row23">
                 <div class="title">
                     剩余100G
+                    <img src="../../src/assets/img/welcome/blueFlowRight.png" alt="">
                 </div>
                 <div class="img">
                     <img src="../../src/assets/img/welcome/blueFlow.png" alt="">
@@ -103,7 +109,16 @@
                 background: #ffffff;
                 margin-top: 20px;
                 height: 310px;
+                position: relative;
+
                 // height: 35vh;
+                .title img {
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    width: 128px;
+                    height: 132px;
+                }
 
                 &:last-child {
                     margin-right: 0px;
