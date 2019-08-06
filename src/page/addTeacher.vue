@@ -19,8 +19,8 @@
         name: 'home',
         data() {
             return {
-                headerList: ['会员', '班级', '新增班级'],
-                openeds: ['5', '5-1'],
+                headerList: ['会员', '讲师', '新增讲师'],
+                openeds: ['3', '3-1'],
                 form: {
                     name: '',
                     region: '',

@@ -48,7 +48,7 @@
                 </template>
                 <el-menu-item-group>
                     <el-menu-item index="2-1">
-                        <router-link to="/">新增学生</router-link>
+                        <router-link to="/addStudent">新增学生</router-link>
                     </el-menu-item>
                     <el-menu-item index="2-2">
                         <router-link to="/studentList">学生列表</router-link>
@@ -63,10 +63,10 @@
                 <el-menu-item-group>
 
                     <el-menu-item index="3-1">
-                        <router-link to="/">新增讲师</router-link>
+                        <router-link to="/addTeacher">新增讲师</router-link>
                     </el-menu-item>
                     <el-menu-item index="3-2">
-                        <router-link to="/">讲师列表</router-link>
+                        <router-link to="/teacherList">讲师列表</router-link>
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
@@ -78,7 +78,7 @@
                 </template>
                 <el-menu-item-group>
                     <el-menu-item index="4-1">
-                        <router-link to="/">新增学科</router-link>
+                        <router-link to="/addSubject">新增学科</router-link>
                     </el-menu-item>
                     <el-menu-item index="4-2">
                         <router-link to="/subjectList">学科列表</router-link>
@@ -95,7 +95,7 @@
                         <router-link to="/addClass">新增班级</router-link>
                     </el-menu-item>
                     <el-menu-item index="5-2">
-                        <router-link to="/">班级列表</router-link>
+                        <router-link to="/classList">班级列表</router-link>
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>

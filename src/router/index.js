@@ -16,20 +16,41 @@ export default new Router({
             component: r => require.ensure([], () => r(require('../page/login')), 'login')
         },
         {
+            path: '/addStudent',
+            component: r => require.ensure([], () => r(require('../page/addStudent')), 'addStudent')
+        },
+        {
             path: '/studentList',
             component: r => require.ensure([], () => r(require('../page/studentList')), 'studentList')
         },
         {
-            path: '/largeClassList',
-            component: r => require.ensure([], () => r(require('../page/largeClassList')), 'largeClassList')
+            path: '/addTeacher',
+            component: r => require.ensure([], () => r(require('../page/addTeacher')), 'addTeacher')
+        },
+        {
+            path: '/teacherList',
+            component: r => require.ensure([], () => r(require('../page/teacherList')), 'teacherList')
+        },
+        {
+            path: '/addSubject',
+            component: r => require.ensure([], () => r(require('../page/addSubject')), 'addSubject')
+        },
+        {
+            path: '/subjectList',
+            component: r => require.ensure([], () => r(require('../page/subjectList')), 'subjectList')
         },
         {
             path: '/addClass',
             component: r => require.ensure([], () => r(require('../page/addClass')), 'addClass')
         },
         {
-            path: '/subjectList',
-            component: r => require.ensure([], () => r(require('../page/subjectList')), 'subjectList')
-        }
+            path: '/classList',
+            component: r => require.ensure([], () => r(require('../page/classList')), 'classList')
+        },
+        {
+            path: '/largeClassList',
+            component: r => require.ensure([], () => r(require('../page/largeClassList')), 'largeClassList')
+        },
+
     ]
 })
