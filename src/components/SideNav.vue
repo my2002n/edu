@@ -324,6 +324,10 @@
         }
 
         .el-menu-item-group {
+            >div {
+                display: none !important;
+            }
+
             ul li {
                 padding: 0px !important;
 
