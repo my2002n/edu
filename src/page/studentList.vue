@@ -169,6 +169,7 @@
                         :page-sizes="[100, 200, 300, 400]" :page-size="100"
                         layout="total, sizes, prev, pager, next, jumper" :total="400">
                     </el-pagination>
+                    <!-- <button>确定</button> -->
                 </div>
             </div>
         </div>
@@ -346,17 +347,33 @@
 
 
     // 分页样式
-    .el-pager {
-        // .number {
-        //     margin: 0px !important;
-        //     background: #ffffff !important;
-        //     border: 1px solid rgba(209, 219, 229, 1);
-        //     color: #D1DBE5 !important;
-        // }
+    .el-pagination {
+        .el-pager {
+            .number {
+                margin: 0px !important;
+                background: #ffffff !important;
+                border: 1px solid rgba(209, 219, 229, 1);
+                color: #546374 !important;
+                font-weight: 400;
+                border-left: none
+            }
 
-        // li.active {
-        //     background-color: #409EFF !important;
-        // }
+            li.active {
+                background-color: #409EFF !important;
+                color: #fff !important;
+            }
+        }
+
+        .btn-prev,
+        .btn-next {
+            margin: 0px !important;
+            background: #ffffff !important;
+            border: 1px solid rgba(209, 219, 229, 1);
+        }
+
+        .btn-next {
+            border-left: none;
+        }
     }
 
 </style>
