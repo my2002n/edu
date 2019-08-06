@@ -39,7 +39,7 @@
                     </el-table>
                 </div>
                 <div class="footer-contain">
-                    <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+                    <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange"
                         :page-sizes="[100, 200, 300, 400]" :page-size="100"
                         layout="total, sizes, prev, pager, next, jumper" :total="400">
                     </el-pagination>

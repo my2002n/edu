@@ -165,7 +165,7 @@
                     </el-table>
                 </div>
                 <div class="footer-contain">
-                    <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+                    <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange"
                         :page-sizes="[100, 200, 300, 400]" :page-size="100"
                         layout="total, sizes, prev, pager, next, jumper" :total="400">
                     </el-pagination>
@@ -342,6 +342,21 @@
 
     .el-form-item__content {
         margin-right: 20px
+    }
+
+
+    // 分页样式
+    .el-pager {
+        // .number {
+        //     margin: 0px !important;
+        //     background: #ffffff !important;
+        //     border: 1px solid rgba(209, 219, 229, 1);
+        //     color: #D1DBE5 !important;
+        // }
+
+        // li.active {
+        //     background-color: #409EFF !important;
+        // }
     }
 
 </style>
