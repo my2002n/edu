@@ -27,7 +27,7 @@
                 </div>
                 <div class="content-contain">
                     <el-table :data="tableData" style="width: 100%"
-                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}">
+                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}" stripe>
                         <el-table-column type="expand">
                             <template slot-scope="props">
                                 <el-form label-position="left" inline class="demo-table-expand">

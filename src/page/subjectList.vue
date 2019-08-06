@@ -21,7 +21,7 @@
                 </div>
                 <div class="content-contain">
                     <el-table :data="tableData" style="width: 100%"
-                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}">
+                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}" stripe>
                         <el-table-column label="学科" prop="id">
                         </el-table-column>
                         <el-table-column label="备注" prop="name">
@@ -190,10 +190,6 @@
 
             }
 
-        }
-
-        .el-table__expanded-cell {
-            padding-left: 60px !important;
         }
     }
 
