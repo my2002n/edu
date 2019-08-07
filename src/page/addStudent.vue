@@ -30,8 +30,8 @@
                             <el-input type="textarea" v-model="form.desc"></el-input>
                         </el-form-item>
                         <el-form-item class="btn-group">
-                            <el-button type="primary">保存</el-button>
-                            <el-button>取消</el-button>
+                            <el-button type="primary">确定</el-button>
+                            <el-button>重置</el-button>
                         </el-form-item>
                     </el-form>
                 </div>
