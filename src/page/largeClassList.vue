@@ -43,11 +43,11 @@
                         </el-table-column>
                         <el-table-column label="课程名称" prop="desc">
                         </el-table-column>
-                        <el-table-column label="讲师" prop="desc" width="120px">
+                        <el-table-column label="讲师" prop="desc" width="100px">
                         </el-table-column>
-                        <el-table-column label="助教" prop="desc" width="120px">
+                        <el-table-column label="助教" prop="desc" width="100px">
                         </el-table-column>
-                        <el-table-column label="课程回放" prop="back" width="100px">
+                        <el-table-column label="课程回放" prop="back" width="80px">
                             <template slot-scope="scope">
                                 <el-button type="text" size="small">
                                     {{scope.row.back}}
@@ -56,7 +56,7 @@
                         </el-table-column>
                         <el-table-column label="状态" prop="status" width="100px">
                         </el-table-column>
-                        <el-table-column label="操作" width="200px">
+                        <el-table-column label="操作" width="190px">
                             <template slot-scope="scope">
                                 <span class="operate">
                                     <img src="../../src/assets/img/welcome/edit.png" alt="">
@@ -79,6 +79,7 @@
                         :page-sizes="[100, 200, 300, 400]" :page-size="100"
                         layout="total, sizes, prev, pager, next, jumper" :total="400">
                     </el-pagination>
+                    <div class='go-page'>确定</div>
                 </div>
             </div>
 

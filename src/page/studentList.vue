@@ -169,7 +169,7 @@
                         :page-sizes="[100, 200, 300, 400]" :page-size="100"
                         layout="total, sizes, prev, pager, next, jumper" :total="400">
                     </el-pagination>
-                    <!-- <button>确定</button> -->
+                    <div class='go-page'>确定</div>
                 </div>
             </div>
         </div>
