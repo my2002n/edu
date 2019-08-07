@@ -158,7 +158,7 @@
         data() {
             return {
                 activeTab: 'Member', // 默认显示会员
-                // openeds: ['2', '2-1']
+                myOpeneds: this.openeds
             }
         },
         props: {
@@ -190,10 +190,8 @@
 
             },
             handleOpen(key, keyPath) {
-                // console.log(key, keyPath);
-                // keyPath.push(key + '' + '1')
-                // this.openeds = keyPath
-                // console.log('key', this.openeds)
+                let openStr = key + ''
+                this.openeds = [openStr]
             },
 
         }
