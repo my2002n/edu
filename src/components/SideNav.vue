@@ -101,49 +101,49 @@
             </el-submenu>
         </el-menu>
         <!-- 第二个 -->
-        <el-menu default-active="2" class="el-menu-vertical-demo" background-color="#22345E" text-color="#fff"
-            active-text-color="#55A8FD" v-if="activeTab === 'Show'" :default-openeds="openeds">
-            <el-submenu index="2">
+        <el-menu default-active="b" class="el-menu-vertical-demo" background-color="#22345E" text-color="#fff"
+            active-text-color="#55A8FD" v-if="activeTab === 'Show'" :default-openeds="openeds" @open="handleOpen">
+            <el-submenu index="b">
                 <template slot="title">
                     <!-- <div class="circle"></div> -->
                     <span class="nav-title">直播大班课</span>
                 </template>
                 <el-menu-item-group>
-                    <el-menu-item index="1-1">
+                    <el-menu-item index="b-1">
                         <router-link to="/largeClassList">新增直播大班课</router-link>
                     </el-menu-item>
-                    <el-menu-item index="1-2">
+                    <el-menu-item index="b-2">
                         <router-link to="/largeClassList">大班课列表</router-link>
                     </el-menu-item>
-                    <el-menu-item index="1-3">
+                    <el-menu-item index="b-3">
                         <router-link to="/largeClassList">进入教室</router-link>
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
-            <el-submenu index="2">
+            <el-submenu index="b2">
                 <template slot="title">
                     <!-- <div class="circle"></div> -->
                     <span class="nav-title">直播小班课</span>
                 </template>
                 <el-menu-item-group>
-                    <el-menu-item index="1-1">
+                    <el-menu-item index="b2-1">
                         <router-link to="/largeClassList">新增直播小班课</router-link>
                     </el-menu-item>
-                    <el-menu-item index="1-2">
+                    <el-menu-item index="b2-2">
                         <router-link to="/largeClassList">小班课列表</router-link>
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
-            <el-submenu index="3">
+            <el-submenu index="b3">
                 <template slot="title">
                     <!-- <div class="circle"></div> -->
                     <span class="nav-title">直播1v1</span>
                 </template>
                 <el-menu-item-group>
-                    <el-menu-item index="1-1">
+                    <el-menu-item index="b3-1">
                         <router-link to="/addClass">新增直播客1v1</router-link>
                     </el-menu-item>
-                    <el-menu-item index="1-2">
+                    <el-menu-item index="b3-2">
                         <router-link to="/addClass">1v1课列表</router-link>
                     </el-menu-item>
                 </el-menu-item-group>
@@ -158,7 +158,6 @@
         data() {
             return {
                 activeTab: 'Member', // 默认显示会员
-                // openeds: ['2', '2-1']
             }
         },
         props: {
@@ -190,10 +189,9 @@
 
             },
             handleOpen(key, keyPath) {
-                // console.log(key, keyPath);
-                // keyPath.push(key + '' + '1')
-                // this.openeds = keyPath
-                // console.log('key', this.openeds)
+                let openStr = key + ''
+                this.openeds = [openStr]
+                console.log('tttttttttttt', this.openeds)
             },
 
         }
@@ -356,8 +354,9 @@
             }
 
             .router-link-exact-active {
-                // background: rgba(85, 168, 253, 0.3) !important;
+                background: rgba(85, 168, 253, 0.3) !important;
                 color: #55A8FD !important;
+                width: 160px;
             }
 
         }
