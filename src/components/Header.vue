@@ -98,6 +98,7 @@
 
         .line {
             height: 80px;
+            width: 5px;
         }
     }
 
