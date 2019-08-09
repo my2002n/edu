@@ -134,6 +134,7 @@
             width: 20px;
             position: relative;
             top: 4px;
+            margin-right: 12px;
         }
     }
 
