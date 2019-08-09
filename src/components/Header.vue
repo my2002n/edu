@@ -13,8 +13,9 @@
                 <span>王美娜</span>
                 <span class="grey-name">管理员</span>
             </div>
-            <div class="out-btn">
-                <img src="../../src/assets/img/welcome/arrow.png" alt="" class='out-img'>
+            <div class="out-btn" @mouseenter="enter" @mouseleave="leave">
+                <img src="../../src/assets/img/welcome/arrow.png" alt="" class='out-img' v-if="!showWhite">
+                <img src="../../src/assets/img/welcome/arrowWhite.png" alt="" class='out-img' v-else>
                 <span>退出</span>
             </div>
         </div>
@@ -26,10 +27,19 @@
         name: 'Header',
         data() {
             return {
+                showWhite: false
 
             }
         },
         methods: {
+            enter() {
+                this.showWhite = true
+
+            },
+            leave() {
+                this.showWhite = false
+
+            }
 
         },
         props: {
@@ -59,6 +69,11 @@
         border: 1px solid rgba(85, 168, 253, 0.2733);
         font-size: 14px;
         color: #55A8FD;
+
+        &:hover {
+            background: #55A8FD;
+            color: #fff;
+        }
 
         .out-img {
             width: 10px;
