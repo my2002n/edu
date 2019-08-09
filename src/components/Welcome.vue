@@ -110,6 +110,7 @@
                 margin-top: 20px;
                 height: 310px;
                 position: relative;
+                box-shadow: 0px 0px 0px 0px rgba(119, 151, 178, 0.16);
 
                 // height: 35vh;
                 .title img {

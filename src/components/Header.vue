@@ -3,7 +3,8 @@
         <div class="left">
             <div v-for="(item, idx) in headerList">
                 <span>{{item}}</span>
-                <img src="../../src/assets/img/welcome/line.png" alt="" class="line">
+                <img src="../../src/assets/img/welcome/line.png" alt="" class="line" v-if="headerList.length-1 !== idx">
+                <img src="../../src/assets/img/welcome/lineLast.png" alt="" class="line" v-else>
             </div>
         </div>
         <div class="right">
