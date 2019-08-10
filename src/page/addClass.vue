@@ -43,7 +43,8 @@
                             <el-col class="line date-line" :span="2">-</el-col>
                             <el-col :span="11">
                                 <el-form-item prop="date2">
-                                    <el-time-picker placeholder="选择时间" style="width: 100%;">
+                                    <el-time-picker placeholder="选择时间" style="width: 100%;"  format="HH:mm"
+                                                    value-format="HH:mm">
                                     </el-time-picker>
                                 </el-form-item>
                             </el-col>
@@ -58,7 +59,8 @@
                             <el-col class="line date-line" :span="2">-</el-col>
                             <el-col :span="11">
                                 <el-form-item prop="date2">
-                                    <el-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%;">
+                                    <el-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%;"  format="HH:mm"
+                                                    value-format="HH:mm">
                                     </el-time-picker>
                                 </el-form-item>
                             </el-col>
