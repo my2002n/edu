@@ -1,20 +1,22 @@
 <template>
     <div class="login">
+        <div class="login-img">
+            <img src="../../src/assets/img/welcome/login.png" alt="">
+        </div>
         <div class="dc-login-content">
             <div class="title">
-                <div class="main">
-                    <router-link to="/"></router-link>
-                </div>
                 <div class="info">
-                    您好，欢迎登录数据科学云！
+                    欢迎登录直播课堂
                 </div>
             </div>
 
             <div class="login-form">
-<!--                <dc-tab :tabs="tabs" @clickTab="handleClickTab" justify="center" class="dc-tab-in-login distance-32" :padding="30" />-->
+                <!--                <dc-tab :tabs="tabs" @clickTab="handleClickTab" justify="center" class="dc-tab-in-login distance-32" :padding="30" />-->
                 <div class="account distance" v-if="loginMode === 'account'">
-                    <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text" placeholder="请输入用户名" @keyup.enter="loginByAccount" />
-                    <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword" type="password" placeholder="请输入密码" @keyup.enter="loginByAccount" />
+                    <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text"
+                        placeholder="账号:" @keyup.enter="loginByAccount" />
+                    <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword" type="password"
+                        placeholder="密码:" @keyup.enter="loginByAccount" />
                     <div class="options little-distance">
                         <!-- <span></span> -->
                         <router-link to="/repassword">忘记密码？</router-link>
@@ -24,41 +26,34 @@
                     </div>
                     <div v-else class="space"></div>
                     <button @click="loginByAccount" class="dc-button-big primary">
-                        立即登录
+                        登录
                     </button>
                 </div>
 
                 <div class="phone distance" v-if="loginMode === 'phone'">
                     <div class="options little-distance">
                         <!-- <span></span> -->
-                      <router-link to="/repassword">忘记密码？</router-link>
+                        <router-link to="/repassword">忘记密码？</router-link>
                     </div>
                     <div class="dc-error-tip little-distance" v-if="errorTip">
                         {{ errorTip }}
                     </div>
                     <div v-else class="space"></div>
                     <button @click="loginByPhone" class="dc-button-big primary">
-                        立即登录
+                        登录
                     </button>
                 </div>
 
                 <div>
-                    没有账号？
-                    <router-link to="/register">立即注册</router-link>
+                    <router-link to="/register">教学机构注册</router-link>
                 </div>
             </div>
-        </div>
-
-        <div class="dc-login-bgcs">
-            <div class="persons"></div>
-            <div class="cloud-top"></div>
-            <div class="cloud-bottom"></div>
         </div>
     </div>
 </template>
 
 <script>
-  // import DcTab from '../../src/components/DcTab';
+    // import DcTab from '../../src/components/DcTab';
     export default {
         layout: 'unlogined',
         head() {
@@ -76,8 +71,7 @@
                 accountPassword: '',
                 autoLoginStatus: false,
                 errorTip: '',
-                tabs: [
-                    {
+                tabs: [{
                         name: '账号登录',
                         eng: 'account'
                     },
@@ -167,7 +161,18 @@
 <style lang="less" scoped>
     @import url('../../src/assets/less/Mixins.less');
     @import url('../../src/assets/less/common.less');
+
     .login {
+        .login-img {
+            width: 54%;
+            float: left;
+
+            img {
+                width: 100%;
+                min-height: 1000px;
+            }
+
+        }
 
         .distance-32 {
             margin-bottom: 32px;
@@ -178,13 +183,18 @@
         }
 
         .dc-login-content {
-            position: absolute;
-            width: 400px;
-            right: 30%;
-            top: 50%;
-            margin: -250px -200px 0 0;
-            z-index: 500;
+            width: 46%;
+            float: right;
 
+            .info {
+                height: 42px;
+                font-size: 30px;
+                font-family: PingFang-SC-Medium;
+                font-weight: 500;
+                color: rgba(85, 168, 253, 1);
+                line-height: 42px;
+                margin-top: 135px;
+            }
 
             .title {
                 text-align: center;
@@ -201,12 +211,11 @@
                     }
                 }
 
-                .info {
-                    font-size: 18px;
-                }
+
             }
 
             .login-form {
+                margin: auto;
                 width: 400px;
                 height: 440px;
                 padding: 40px;
@@ -227,7 +236,14 @@
                 }
 
                 button {
-                    width: 100%;
+                    width: 314px;
+                    height: 39px;
+                    background: linear-gradient(167deg, rgba(103, 178, 252, 1) 0%, rgba(87, 126, 253, 1) 100%);
+                    border-radius: 2px;
+                    font-size: 20px;
+                    font-family: PingFang-SC-Regular;
+                    font-weight: 400;
+                    color: #ffffff;
                 }
 
                 .options {
@@ -239,5 +255,3 @@
     }
 
 </style>
-
-

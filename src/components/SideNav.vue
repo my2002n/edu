@@ -237,6 +237,11 @@
         }
 
         .icon-list {
+            img {
+                width: 16px;
+                height: 16px;
+            }
+
             height: 36px;
             /*background: #22345E;*/
             background: rgb(56, 73, 114);
