@@ -373,7 +373,7 @@
     }
 
     .el-form-item__content {
-        margin-right: 20px
+        margin-right: 0px !important;
     }
 
 
