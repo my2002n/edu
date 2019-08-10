@@ -341,7 +341,6 @@
     .el-table__body-wrapper {
         .el-row {
             margin-bottom: 16px !important;
-
             &:first-child {
                 margin-top: 10px !important;
             }
@@ -353,6 +352,11 @@
             td {
                 padding: 8px 0px !important;
 
+            }
+            tr{
+                &:hover{
+                    /*background:rgba(85,168,253,0.05)!important;*/
+                }
             }
 
         }
@@ -401,6 +405,18 @@
         .btn-next {
             border-left: none;
         }
+    }
+    // 下拉选
+    .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
+        background-color:#55A8FD !important;
+        color: #FFFFFF !important;
+    }
+    .el-select-dropdown__list {
+        padding-top: 0px!important;
+        padding-bottom: 0px!important;
+    }
+    .popper__arrow {
+        display: none!important;
     }
 
 </style>
