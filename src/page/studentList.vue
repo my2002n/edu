@@ -27,7 +27,10 @@
                 </div>
                 <div class="content-contain">
                     <el-table :data="tableData" style="width: 100%"
-                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}" stripe>
+                        :header-cell-style="{background:'#EFF1F6',color:'#1C1C1C'}" stripe
+                              :row-key='getRowKeys'
+                              :expand-row-keys="expands"
+                              @expand-change="expandSelect">
                         <el-table-column type="expand">
                             <template slot-scope="props">
                                 <el-form label-position="left" inline class="demo-table-expand">
@@ -204,7 +207,7 @@
                     shopId: '10333',
                     sex: '女'
                 }, {
-                    id: '15694267318',
+                    id: '15694267315',
                     name: '小红',
                     category: '这个孩子是第一次学习课程需要盯着',
                     desc: '1994-08-24',
@@ -222,24 +225,41 @@
                     shopId: '10333',
                     sex: '女'
                 }],
-                handleSizeChange(val) {
-                    console.log(`每页 ${val} 条`);
-                },
-                handleCurrentChange(val) {
-                    console.log(`当前页: ${val}`);
-                },
-                handleEdit(index, row) {
-                    console.log(index, row);
-                },
-                handleDelete(index, row) {
-                    console.log(index, row);
-                }
+                expands: [],
+
             }
         },
         methods: {
             onSubmit() {
                 console.log('submit!');
-            }
+            },
+            handleSizeChange(val) {
+                console.log(`每页 ${val} 条`);
+            },
+            handleCurrentChange(val) {
+                console.log(`当前页: ${val}`);
+            },
+            handleEdit(index, row) {
+                console.log(index, row);
+            },
+            handleDelete(index, row) {
+                console.log(index, row);
+            },
+            getRowKeys:function(row){
+                return row.id
+            },
+            expandSelect:function(row, expandedRows) {
+                var that = this
+                if (expandedRows.length) {
+                    that.expands = []
+                    if (row) {
+                        that.expands.push(row.id)
+                    }
+                }
+                else {
+                    that.expands = []
+                }
+            },
         }
     }
 
