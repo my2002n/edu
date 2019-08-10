@@ -94,10 +94,6 @@
     @import url('../../src/assets/less/Mixins.less');
 
     .welcome-container {
-        // .test {
-        //     background: url('../../src/assets/img/welcome/orangePlus.png') center no-repeat;
-        // }
-
         .row1,
         .row2 {
             .flex(row, space-between, center, nowrap);
@@ -111,8 +107,6 @@
                 height: 310px;
                 position: relative;
                 box-shadow: 0px 0px 0px 0px rgba(119, 151, 178, 0.16);
-
-                // height: 35vh;
                 .title img {
                     position: absolute;
                     right: 0px;
@@ -125,43 +119,9 @@
                     margin-right: 0px;
                 }
             }
-
-            // .row11 {
-            //     background: url('../../src/assets/img/welcome/orangePlus.png') center no-repeat;
-            //     background-size: 105% 105%
-
-            // }
-
-            // .row12 {
-            //     background: url('../../src/assets/img/welcome/blueIe.png') center no-repeat;
-            //     background-size: 105% 105%
-
-            // }
-
-            // .row13 {
-            //     background: url('../../src/assets/img/welcome/greenClass.png') center no-repeat;
-            //     background-size: 105% 105%
-
-            // }
-
-            // .row21 {
-            //     background: url('../../src/assets/img/welcome/redShow.png') center no-repeat;
-            //     background-size: 105% 105%
-
-            // }
-
-            // .row22 {
-            //     background: url('../../src/assets/img/welcome/orangeRedis.png') center no-repeat;
-            //     background-size: 105% 105%
-
-            // }
-
-            // .row23 {
-            //     background: url('../../src/assets/img/welcome/blueFlow.png') center no-repeat;
-            //     background-size: 105% 105%
-
-            // }
-
+            .row11, .row12, .row13, .row21, .row22, .row23{
+                box-shadow: 0px 2px 3px 0px rgba(119,151,178,0.16)
+            }
             .ins {
                 margin-top: 26px;
                 width: 300px;
@@ -184,10 +144,6 @@
             img {
                 height: 140px;
             }
-
-            /*height: 70px;*/
-            // height: 12vh;
-            /*background-size: 100%;*/
 
         }
 

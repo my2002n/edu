@@ -110,6 +110,9 @@
             display: inline-block;
             padding: 0px 10px;
         }
+        div:first-child{
+            padding-left: 22px;
+        }
 
         .line {
             height: 80px;
