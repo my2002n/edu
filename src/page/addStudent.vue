@@ -138,5 +138,23 @@
     .date-line {
         text-align: center !important
     }
+    .add-title {
+        height: 70px;
+        line-height: 70px;
+        padding-left: 30px;
+
+        img {
+            height: 20px;
+            width: 20px;
+            position: relative;
+            top: 4px;
+            margin-right: 12px;
+        }
+        span{
+            font-size: 20px;
+            font-family: PingFang-SC-Regular;
+            font-weight: 400;
+        }
+    }
 
 </style>
