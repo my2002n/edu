@@ -51,6 +51,16 @@ export default new Router({
             path: '/largeClassList',
             component: r => require.ensure([], () => r(require('../page/largeClassList')), 'largeClassList')
         },
+        // 学生开始
+        {
+            path: '/liveClass',
+            component: r => require.ensure([], () => r(require('../page/liveClass')), 'liveClass')
+        },
+        {
+            path: '/liveCourse',
+            component: r => require.ensure([], () => r(require('../page/liveCourse')), 'liveCourse')
+        },
+
 
     ]
 })
