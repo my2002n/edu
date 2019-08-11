@@ -15,11 +15,11 @@
             <div class="login-down-content">
                 <div class="login-down-left">
                     <div class="quick-code"></div>
-                    <span>学生端IOS下载</span>
+                    <span>IOS下载</span>
                 </div>
                 <div class="login-down-right">
                     <div class="quick-code"></div>
-                    <span>学生端Android下载</span>
+                    <span>Android下载</span>
                 </div>
             </div>
         </div>
@@ -43,7 +43,8 @@
 <!--                            <div class="options little-distance">-->
 <!--                                <router-link to="/repassword">忘记密码？</router-link>-->
 <!--                            </div>-->
-                            <span class="sure-code">此处放验证码</span>
+<!--                            <span class="sure-code">此处放验证码</span>-->
+                            <img src="../../src/assets/img/welcome/code.jpg" alt="" class="code-img">
                             <div class="dc-error-tip little-distance" v-if="errorTip">
                                 {{ errorTip }}
                             </div>
@@ -65,7 +66,7 @@
                             <!--                            <div class="options little-distance">-->
                             <!--                                <router-link to="/repassword">忘记密码？</router-link>-->
                             <!--                            </div>-->
-                            <span class="sure-code">此处放验证码</span>
+                            <img src="../../src/assets/img/welcome/code.jpg" alt="" class="code-img">
                             <div class="dc-error-tip little-distance" v-if="errorTip">
                                 {{ errorTip }}
                             </div>
@@ -73,7 +74,11 @@
                             <button @click="loginByAccount" class="dc-button-big primary">
                                 登录
                             </button>
-                            <div class="res"><router-link to="/register">教学机构注册</router-link></div>
+                            <div class="res-contain">
+                                <div class="res"><router-link to="/register">忘记密码</router-link></div>
+                                <div class="res"><router-link to="/register">学生注册</router-link></div>
+                            </div>
+
                         </div>
                     </el-tab-pane>
                 </el-tabs>
@@ -220,8 +225,8 @@
             .login-down-content{
                 position: absolute;
                 bottom: 38px;
-                width: 250px;
-                left: calc((100% - 250px) / 2);
+                width: 300px;
+                left: calc((100% - 300px) / 2);
                 .quick-code{
                     width:90px;
                     height:90px;
@@ -232,10 +237,20 @@
                 .login-down-left {
                     float: left;
                     width: 50%;
+                    text-align: center;
+                    span{
+                        position: relative;
+                        right: 30px;
+                    }
                 }
                 .login-down-right{
                     float: right;
                     width: 50%;
+                    text-align: center;
+                    span{
+                        position: relative;
+                        right: 30px;
+                    }
                 }
                 span{
                     width:80px;
@@ -312,7 +327,7 @@
             .title {
                 text-align: center;
                 margin-top: 135px;
-                margin-bottom: 60px;
+                margin-bottom: -12px;
 
                 .main {
                     height: 30px;
@@ -366,13 +381,29 @@
                 }
                 input{
                     padding: 0px 10px;
-                    width: 294px;
+                    width: 292px;
+                    font-size: 14px;
+                    font-family: PingFang-SC-Regular;
+                    font-weight: 400;
+                    color: rgba(96,98,102,1);
+                    margin-left: 1px;
+                    &:first-child{
+                        margin-top: 1px;
+                    }
+                    &:focus{
+                        border:1px solid rgba(85,168,253,1);
+                    }
                 }
                 .sure-code-input {
-                    width: 185px;
+                    width: 183px;
+                    color:rgba(170,170,170,1);
+                    margin-left: 1px;
                 }
                 .sure-code {
                     margin-left: 14px;
+                }
+                .res-contain{
+                    .flex(row, space-between, center, nowrap);
                 }
                 .res{
                     text-align: right;
@@ -391,7 +422,7 @@
                 }
                 .bot1{
                     position: absolute;
-                    bottom: 40px;
+                    bottom: 48px;
                     font-size:14px;
                     font-family:PingFang-SC-Regular;
                     font-weight:400;
@@ -411,6 +442,12 @@
                     text-align: center;
                     width: 314px;
                 }
+                .code-img{
+                    width: 97px;
+                    height: 41px;
+                    float: right;
+                    margin-right: 1px;
+                }
 
             }
         }
@@ -419,17 +456,26 @@
 </style>
 <style lang="less">
 .el-tabs__nav{
-    margin-left: 82px!important;
+    margin-left: 64px!important;
     >div{
         font-size:16px!important;
         font-family:PingFang-SC-Regular!important;
         font-weight:400!important;
-        color:rgba(85,168,253,1)!important;
+        color: rgba(96,98,102,1) !important
+    }
+    .is-active{
+        color: #55a8fd !important;
     }
 
 }
 .el-tabs__header{
     margin-bottom: 22px!important;
 }
+    #tab-first{
+        padding-right: 30px!important;
+    }
+    #tab-second {
+        padding-left: 30px!important;
+    }
 
 </style>
