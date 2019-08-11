@@ -4,7 +4,24 @@
             <div class ='login-title'>
               直播课堂
             </div>
-<!--            <img src="../../src/assets/img/welcome/login.png" alt="">-->
+            <div class="login-ins">
+                专注在线教育培训，支持直播授课，点播学习，视频互动
+            </div>
+            <div class="login-ins2">
+                <span>//</span>
+                <span>支持PC、MAC、IOS、Android、Ipad</span>
+                <span>//</span>
+            </div>
+            <div class="login-down-content">
+                <div class="login-down-left">
+                    <div class="quick-code"></div>
+                    <span>学生端IOS下载</span>
+                </div>
+                <div class="login-down-right">
+                    <div class="quick-code"></div>
+                    <span>学生端Android下载</span>
+                </div>
+            </div>
         </div>
         <div class="dc-login-content">
             <div class="title">
@@ -167,6 +184,7 @@
 
     .login {
         height: 100Vh;
+        min-height: 720px;
         .login-img {
             min-width: 692px;
             width: 54%;
@@ -174,13 +192,79 @@
             background: url("../../src/assets/img/welcome/login.png") center no-repeat;
             height: 100%;
             background-size:100%;
+            position: relative;
 
             img {
                 width: 100%;
                 min-height: 1000px;
             }
+            .login-down-content{
+                position: absolute;
+                bottom: 38px;
+                width: 250px;
+                left: calc((100% - 250px) / 2);
+                .quick-code{
+                    width:90px;
+                    height:90px;
+                    background:rgba(255,255,255,1);
+                    opacity:0.617;
+                    margin-bottom: 5px;
+                }
+                .login-down-left {
+                    float: left;
+                    width: 50%;
+                }
+                .login-down-right{
+                    float: right;
+                    width: 50%;
+                }
+                span{
+                    width:80px;
+                    height:17px;
+                    font-size:12px;
+                    font-family:PingFang-SC-Regular;
+                    font-weight:400;
+                    color:rgba(255,255,255,1);
+                    line-height:17px;
+                }
+            }
 
         }
+        .login-title{
+            width:190px;
+            height:97px;
+            font-size:34px;
+            font-family:FZZZHONGJW--GB1-0;
+            font-weight:normal;
+            color:rgba(255,255,255,1);
+            line-height:145px;
+            letter-spacing:5px;
+            margin-left: 34px;
+        }
+        .login-ins {
+            width:500px;
+            height:28px;
+            font-size:20px;
+            font-family:PingFang-SC-Medium;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+            line-height:28px;
+            margin: auto;
+            margin-top: 44px;
+        }
+        .login-ins2 {
+            width: 280px;
+            height:20px;
+            font-size:14px;
+            font-family:PingFang-SC-Regular;
+            font-weight:400;
+            color:rgba(255,255,255,1);
+            line-height:20px;
+            margin: auto;
+            margin-top: 18px;
+            /*background: rgba(88, 129, 253, 0.3)*/
+        }
+
 
         .distance-32 {
             margin-bottom: 32px;
