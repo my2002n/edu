@@ -55,22 +55,25 @@
                         </div>
                     </el-tab-pane>
                     <el-tab-pane label="学生登录" name="second">
-                        <div class="phone distance">
-                            <div class="options little-distance">
-                                <!-- <span></span> -->
-                                <router-link to="/repassword">忘记密码？</router-link>
-                            </div>
+                        <div class="account distance" >
+                            <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text"
+                                   placeholder="账号:" @keyup.enter="loginByAccount" />
+                            <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword" type="password"
+                                   placeholder="密码:" @keyup.enter="loginByAccount" />
+                            <input @blur="hideErrorTip" class="dc-input-big distance sure-code-input" v-model="accountPassword" type="password"
+                                   placeholder="请输入验证码:" @keyup.enter="loginByAccount" />
+                            <!--                            <div class="options little-distance">-->
+                            <!--                                <router-link to="/repassword">忘记密码？</router-link>-->
+                            <!--                            </div>-->
+                            <span class="sure-code">此处放验证码</span>
                             <div class="dc-error-tip little-distance" v-if="errorTip">
                                 {{ errorTip }}
                             </div>
-                            <div v-else class="space"></div>
-                            <button @click="loginByPhone" class="dc-button-big primary">
+                            <div class="space"></div>
+                            <button @click="loginByAccount" class="dc-button-big primary">
                                 登录
                             </button>
-                        </div>
-
-                        <div>
-                            <router-link to="/register">教学机构注册</router-link>
+                            <div class="res"><router-link to="/register">教学机构注册</router-link></div>
                         </div>
                     </el-tab-pane>
                 </el-tabs>
