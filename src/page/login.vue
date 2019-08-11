@@ -1,7 +1,10 @@
 <template>
     <div class="login">
         <div class="login-img">
-            <img src="../../src/assets/img/welcome/login.png" alt="">
+            <div class ='login-title'>
+              直播课堂
+            </div>
+<!--            <img src="../../src/assets/img/welcome/login.png" alt="">-->
         </div>
         <div class="dc-login-content">
             <div class="title">
@@ -163,9 +166,14 @@
     @import url('../../src/assets/less/common.less');
 
     .login {
+        height: 100Vh;
         .login-img {
+            min-width: 692px;
             width: 54%;
             float: left;
+            background: url("../../src/assets/img/welcome/login.png") center no-repeat;
+            height: 100%;
+            background-size:100%;
 
             img {
                 width: 100%;

@@ -169,7 +169,7 @@
                 </div>
                 <div class="footer-contain">
                     <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange"
-                        :page-sizes="[100, 200, 300, 400]" :page-size="100"
+                        :page-sizes="[20, 50, 100, 200]" :page-size="100"
                         layout="total, sizes, prev, pager, next, jumper" :total="400">
                     </el-pagination>
                     <div class='go-page'>确定</div>

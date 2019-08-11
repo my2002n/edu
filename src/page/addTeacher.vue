@@ -11,7 +11,9 @@
                 <div class="add-form-container">
                     <el-form ref="form" :model="form" label-width="80px" class="add-form">
                         <el-form-item label="账号">
-                            <el-input v-model="form.phone" placeholder="请输入账号"></el-input>
+                            <el-input v-model="form.phone" placeholder="请输入账号">
+                                <template slot="append">@13811332209</template>
+                            </el-input>
                         </el-form-item>
                         <el-form-item label="密码">
                             <el-input v-model="form.name" placeholder="请输入密码"></el-input>
