@@ -154,13 +154,13 @@
                         </el-table-column>
                         <el-table-column label="操作" width="140px">
                             <template slot-scope="scope">
-                                <span class="operate">
+                                <span class="operate" title="编辑">
                                     <img src="../../src/assets/img/welcome/edit.png" alt="">
                                 </span>
-                                <span class="operate">
+                                <span class="operate"  title="添加">
                                     <img src="../../src/assets/img/welcome/add.png" alt="">
                                 </span>
-                                <span class="operate">
+                                <span class="operate" title="班级">
                                     <img src="../../src/assets/img/welcome/book.png" alt="">
                                 </span>
                             </template>
