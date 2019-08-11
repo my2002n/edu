@@ -317,6 +317,7 @@
 <style lang="less">
     .el-table {
         border: 1px solid rgba(223, 230, 236, 1) !important;
+        border-bottom: none!important;
         .expanded td{
             box-shadow:0px 2px 0px 0px rgba(244,244,244,1)!important;
             z-index: 1!important;
