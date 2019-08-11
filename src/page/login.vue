@@ -35,11 +35,11 @@
                     <el-tab-pane label="老师登录" name="first">
                         <div class="account distance" >
                             <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text"
-                                   placeholder="账号:" @keyup.enter="loginByAccount" />
+                                   placeholder="账号" @keyup.enter="loginByAccount" />
                             <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword" type="password"
-                                   placeholder="密码:" @keyup.enter="loginByAccount" />
+                                   placeholder="密码" @keyup.enter="loginByAccount" />
                             <input @blur="hideErrorTip" class="dc-input-big distance sure-code-input" v-model="accountPassword" type="password"
-                                   placeholder="请输入验证码:" @keyup.enter="loginByAccount" />
+                                   placeholder="验证码" @keyup.enter="loginByAccount" />
 <!--                            <div class="options little-distance">-->
 <!--                                <router-link to="/repassword">忘记密码？</router-link>-->
 <!--                            </div>-->
@@ -58,11 +58,11 @@
                     <el-tab-pane label="学生登录" name="second">
                         <div class="account distance" >
                             <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text"
-                                   placeholder="账号:" @keyup.enter="loginByAccount" />
+                                   placeholder="手机号码" @keyup.enter="loginByAccount" />
                             <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword" type="password"
-                                   placeholder="密码:" @keyup.enter="loginByAccount" />
+                                   placeholder="密码" @keyup.enter="loginByAccount" />
                             <input @blur="hideErrorTip" class="dc-input-big distance sure-code-input" v-model="accountPassword" type="password"
-                                   placeholder="请输入验证码:" @keyup.enter="loginByAccount" />
+                                   placeholder="验证码" @keyup.enter="loginByAccount" />
                             <!--                            <div class="options little-distance">-->
                             <!--                                <router-link to="/repassword">忘记密码？</router-link>-->
                             <!--                            </div>-->
@@ -391,7 +391,7 @@
                         margin-top: 1px;
                     }
                     &:focus{
-                        border:1px solid rgba(85,168,253,1);
+                        border:1px solid rgba(85,168,253, 0.7);
                     }
                 }
                 .sure-code-input {
