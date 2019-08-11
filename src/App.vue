@@ -18,10 +18,18 @@
         font-size: 14px;
       // 时间样式
        .el-time-panel {
+           .popper__arrow {
+               display: none!important;
+           }
            width: 140px!important;
            .el-scrollbar:last-child{
                display: none!important;
 
+           }
+           .active{
+               /*background: #55A8FD;*/
+               /*color: #fff!important;*/
+               color: #55A8FD!important;
            }
            .el-time-spinner__wrapper:first-child{
                .active {
@@ -29,6 +37,7 @@
                        /*content: ':';*/
                        /*position: relative;*/
                        /*left: 26px;*/
+                       /*color: #fff!important;*/
                    }
                }
            }
