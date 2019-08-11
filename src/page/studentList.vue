@@ -337,6 +337,9 @@
         padding: 0 !important;
         height: 40px !important;
     }
+    .el-table tbody .el-table__row:hover>td {
+        background:rgba(85, 168, 253, 0.05) !important
+    }
 
     .el-table__body-wrapper {
         .el-row {
