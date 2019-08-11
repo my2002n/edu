@@ -317,6 +317,15 @@
 <style lang="less">
     .el-table {
         border: 1px solid rgba(223, 230, 236, 1) !important;
+        .expanded td{
+            box-shadow:0px 2px 0px 0px rgba(244,244,244,1)!important;
+            z-index: 1!important;
+            position: relative!important;
+            /*border-bottom: none;*/
+        }
+        .expanded{
+            box-shadow:0px 2px 0px 0px rgba(244,244,244,1)!important
+        }
     }
 
     .el-table__header-wrapper {
