@@ -377,5 +377,10 @@
             }
         }
     }
+    .el-menu {
+        li{
+           cursor: pointer !important;
+        }
+    }
 
 </style>

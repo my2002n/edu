@@ -31,49 +31,63 @@
             </div>
 
             <div class="login-form">
-                <!--                <dc-tab :tabs="tabs" @clickTab="handleClickTab" justify="center" class="dc-tab-in-login distance-32" :padding="30" />-->
-                <div class="account distance" v-if="loginMode === 'account'">
-                    <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text"
-                        placeholder="账号:" @keyup.enter="loginByAccount" />
-                    <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword" type="password"
-                        placeholder="密码:" @keyup.enter="loginByAccount" />
-                    <div class="options little-distance">
-                        <!-- <span></span> -->
-                        <router-link to="/repassword">忘记密码？</router-link>
-                    </div>
-                    <div class="dc-error-tip little-distance" v-if="errorTip">
-                        {{ errorTip }}
-                    </div>
-                    <div v-else class="space"></div>
-                    <button @click="loginByAccount" class="dc-button-big primary">
-                        登录
-                    </button>
+                <el-tabs v-model="activeName" @tab-click="handleClickTab">
+                    <el-tab-pane label="老师登录" name="first">
+                        <div class="account distance" >
+                            <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text"
+                                   placeholder="账号:" @keyup.enter="loginByAccount" />
+                            <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword" type="password"
+                                   placeholder="密码:" @keyup.enter="loginByAccount" />
+                            <input @blur="hideErrorTip" class="dc-input-big distance sure-code-input" v-model="accountPassword" type="password"
+                                   placeholder="请输入验证码:" @keyup.enter="loginByAccount" />
+<!--                            <div class="options little-distance">-->
+<!--                                <router-link to="/repassword">忘记密码？</router-link>-->
+<!--                            </div>-->
+                            <span class="sure-code">此处放验证码</span>
+                            <div class="dc-error-tip little-distance" v-if="errorTip">
+                                {{ errorTip }}
+                            </div>
+                            <div class="space"></div>
+                            <button @click="loginByAccount" class="dc-button-big primary">
+                                登录
+                            </button>
+                            <div class="res"><router-link to="/register">教学机构注册</router-link></div>
+                        </div>
+                    </el-tab-pane>
+                    <el-tab-pane label="学生登录" name="second">
+                        <div class="phone distance">
+                            <div class="options little-distance">
+                                <!-- <span></span> -->
+                                <router-link to="/repassword">忘记密码？</router-link>
+                            </div>
+                            <div class="dc-error-tip little-distance" v-if="errorTip">
+                                {{ errorTip }}
+                            </div>
+                            <div v-else class="space"></div>
+                            <button @click="loginByPhone" class="dc-button-big primary">
+                                登录
+                            </button>
+                        </div>
+
+                        <div>
+                            <router-link to="/register">教学机构注册</router-link>
+                        </div>
+                    </el-tab-pane>
+                </el-tabs>
+                <div class="bot1">技术支持+微信：my2002n</div>
+                <div class="bot2">
+                    <span>北京智云科技有限公司</span>
+                    <span>京ICP1213123号</span>
                 </div>
 
-                <div class="phone distance" v-if="loginMode === 'phone'">
-                    <div class="options little-distance">
-                        <!-- <span></span> -->
-                        <router-link to="/repassword">忘记密码？</router-link>
-                    </div>
-                    <div class="dc-error-tip little-distance" v-if="errorTip">
-                        {{ errorTip }}
-                    </div>
-                    <div v-else class="space"></div>
-                    <button @click="loginByPhone" class="dc-button-big primary">
-                        登录
-                    </button>
-                </div>
 
-                <div>
-                    <router-link to="/register">教学机构注册</router-link>
-                </div>
+
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    // import DcTab from '../../src/components/DcTab';
     export default {
         layout: 'unlogined',
         head() {
@@ -82,11 +96,11 @@
             };
         },
         components: {
-            // DcTab
+
         },
         data() {
             return {
-                loginMode: 'account',
+                activeName: 'first',
                 accountName: '',
                 accountPassword: '',
                 autoLoginStatus: false,
@@ -184,14 +198,16 @@
 
     .login {
         height: 100Vh;
-        min-height: 720px;
+        min-height: 800px;
+        min-width: 1280px;
+        display: flex;
         .login-img {
             min-width: 692px;
             width: 54%;
             float: left;
             background: url("../../src/assets/img/welcome/login.png") center no-repeat;
             height: 100%;
-            background-size:100%;
+            background-size:120%;
             position: relative;
 
             img {
@@ -271,12 +287,14 @@
         }
 
         .space {
-            height: 46px;
+            height: 24px;
         }
 
         .dc-login-content {
             width: 46%;
             float: right;
+            min-width: 578px;
+            position: relative;
 
             .info {
                 height: 42px;
@@ -290,6 +308,7 @@
 
             .title {
                 text-align: center;
+                margin-top: 135px;
                 margin-bottom: 60px;
 
                 .main {
@@ -308,11 +327,11 @@
 
             .login-form {
                 margin: auto;
-                width: 400px;
+                width: 316px;
                 height: 440px;
                 padding: 40px;
-                box-shadow: 0px 1px 32px 0px rgba(14, 104, 159, 0.1);
-                text-align: center;
+                /*box-shadow: 0px 1px 32px 0px rgba(14, 104, 159, 0.1);*/
+                /*text-align: center;*/
                 background-color: #fff;
 
                 .dc-tabs-center {
@@ -320,7 +339,7 @@
                 }
 
                 .distance {
-                    margin-bottom: 24px;
+                    margin-bottom: 20px;
                 }
 
                 .little-distance {
@@ -342,8 +361,72 @@
                     display: flex;
                     justify-content: space-between;
                 }
+                input{
+                    padding: 0px 10px;
+                    width: 294px;
+                }
+                .sure-code-input {
+                    width: 185px;
+                }
+                .sure-code {
+                    margin-left: 14px;
+                }
+                .res{
+                    text-align: right;
+                    margin-top: 22px;
+                    a{
+                        width:84px;
+                        height:20px;
+                        font-size:14px;
+                        font-family:PingFang-SC-Regular;
+                        font-weight:400;
+                        color:rgba(85,168,253,1);
+                        line-height:20px;
+                        text-decoration: none;
+                    }
+
+                }
+                .bot1{
+                    position: absolute;
+                    bottom: 40px;
+                    font-size:14px;
+                    font-family:PingFang-SC-Regular;
+                    font-weight:400;
+                    color:rgba(169,169,169,1);
+                    line-height:20px;
+                    text-align: center;
+                    width: 314px;
+                }
+                .bot2{
+                    position: absolute;
+                    bottom: 20px;
+                    font-size:14px;
+                    font-family:PingFang-SC-Regular;
+                    font-weight:400;
+                    color:rgba(169,169,169,1);
+                    line-height:20px;
+                    text-align: center;
+                    width: 314px;
+                }
+
             }
         }
     }
+
+</style>
+<style lang="less">
+.el-tabs__nav{
+    margin-left: 82px!important;
+    >div{
+        font-size:16px!important;
+        font-family:PingFang-SC-Regular!important;
+        font-weight:400!important;
+        color:rgba(85,168,253,1)!important;
+    }
+
+}
+.el-tabs__header{
+    margin-bottom: 22px!important;
+}
 
 </style>
