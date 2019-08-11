@@ -179,6 +179,7 @@
 <style lang="less">
     .el-table {
         border: 1px solid rgba(223, 230, 236, 1) !important;
+        border-bottom: none!important;
     }
 
     .el-table__header-wrapper {
