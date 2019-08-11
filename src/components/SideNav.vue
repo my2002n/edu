@@ -315,6 +315,9 @@
 </style>
 <style lang='less'>
     .left-container {
+        box-shadow:0px 0px 12px 0px rgba(113,113,113,0.5);
+        /*box-shadow:0px 0px 12px 0px red;*/
+        position: relative;
         .el-submenu__title {
             line-height: 40px !important;
             height: 40px !important;
