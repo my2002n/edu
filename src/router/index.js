@@ -47,6 +47,14 @@ export default new Router({
             path: '/largeClassList',
             component: r => require.ensure([], () => r(require('../page/largeClassList')), 'largeClassList')
         },
+        {
+            path: '/addLargeClass',
+            component: r => require.ensure([], () => r(require('../page/addLargeClass')), 'addLargeClass')
+        },
+        {
+            path: '/smallClassList',
+            component: r => require.ensure([], () => r(require('../page/smallClassList')), 'smallClassList')
+        },
         // 登陆注册
         {
             path: '/login',

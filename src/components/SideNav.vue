@@ -111,7 +111,7 @@
                 </template>
                 <el-menu-item-group>
                     <el-menu-item index="b-1">
-                        <router-link to="/largeClassList">新增直播大班课</router-link>
+                        <router-link to="/addLargeClass">新增直播大班课</router-link>
                     </el-menu-item>
                     <el-menu-item index="b-2">
                         <router-link to="/largeClassList">大班课列表</router-link>
@@ -131,7 +131,7 @@
                         <router-link to="/largeClassList">新增直播小班课</router-link>
                     </el-menu-item>
                     <el-menu-item index="b2-2">
-                        <router-link to="/largeClassList">小班课列表</router-link>
+                        <router-link to="/smallClassList">小班课列表</router-link>
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>

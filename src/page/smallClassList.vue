@@ -100,7 +100,7 @@
         data() {
             return {
                 dateValue: "",
-                headerList: ['直播', '直播大班课', '大班课列表'],
+                headerList: ['直播', '直播小班课', '小班课列表'],
                 formInline: {
                     user: '',
                     region: ''
