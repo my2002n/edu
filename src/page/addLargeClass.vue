@@ -1,6 +1,6 @@
 <template>
     <div class='home-container'>
-        <SideNav :openeds="openeds"></SideNav>
+        <SideNav :openeds="openeds" :activeTab="activeTab"></SideNav>
         <div class='right-container'>
             <Header class="header" :headerList="headerList"></Header>
             <div class="right-content white-color">
@@ -58,6 +58,7 @@
             return {
                 headerList: ['直播', '大班课', '新增直播大班课'],
                 openeds: ['b', 'b-1'],
+                activeTab: 'Show',
                 form: {
                     name: '',
                     phone: '15694267318',

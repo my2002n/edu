@@ -1,6 +1,6 @@
 <template>
     <div class='home-container'>
-        <SideNav :openeds="openeds"></SideNav>
+        <SideNav :openeds="openeds" :activeTab="activeTab"></SideNav>
         <div class='right-container'>
             <Header class="header" :headerList="headerList"></Header>
             <div class="right-content white-color">
@@ -52,6 +52,7 @@
             return {
                 headerList: ['会员', '学生', '新增学生'],
                 openeds: ['2', '2-1'],
+                activeTab: 'Member',
                 form: {
                     name: '',
                     phone: '15694267318',
@@ -138,6 +139,7 @@
     .date-line {
         text-align: center !important
     }
+
     .add-title {
         height: 70px;
         line-height: 70px;
@@ -150,7 +152,8 @@
             top: 4px;
             margin-right: 12px;
         }
-        span{
+
+        span {
             font-size: 20px;
             font-family: PingFang-SC-Regular;
             font-weight: 400;

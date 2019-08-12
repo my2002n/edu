@@ -49,7 +49,7 @@
         data() {
             return {
                 headerList: ['在线课堂'],
-                openeds: ['5', '5-2'],
+                openeds: ['5', '5-2']
             }
         },
         methods: {

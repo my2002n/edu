@@ -158,7 +158,7 @@
         name: 'Header',
         data() {
             return {
-                activeTab: 'Member', // 默认显示会员
+                // activeTab: 'Member', // 默认显示会员
             }
         },
         props: {
@@ -168,7 +168,14 @@
                     return []
                 }
 
-            }
+            },
+            activeTab: {
+                type: String,
+                default: function () {
+                    return 'Member'
+                }
+
+            },
         },
         methods: {
             // 点击上面图标

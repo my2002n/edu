@@ -1,6 +1,6 @@
 <template>
     <div class='home-container'>
-        <SideNav :openeds="openeds"></SideNav>
+        <SideNav :openeds="openeds" :activeTab="activeTab"></SideNav>
         <div class='right-container'>
             <Header class="header" :headerList="headerList"></Header>
             <div class="right-content white-color">
@@ -63,6 +63,7 @@
             return {
                 headerList: ['会员', '讲师', '新增讲师'],
                 openeds: ['3', '3-1'],
+                activeTab: 'Member',
                 form: {
                     name: '',
                     region: '',

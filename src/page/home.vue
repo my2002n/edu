@@ -1,6 +1,6 @@
 <template>
     <div class='home-container'>
-        <SideNav :openeds="openeds"></SideNav>
+        <SideNav :openeds="openeds" :activeTab="activeTab"></SideNav>
         <div class='right-container'>
             <Header class="header" :headerList="headerList"></Header>
             <div class="right-content">
@@ -26,7 +26,8 @@
         data() {
             return {
                 headerList: ['会员', '欢迎', '欢迎页'],
-                openeds: ['1', '1-1']
+                openeds: ['1', '1-1'],
+                activeTab: 'Member'
             }
         },
         methods: {
