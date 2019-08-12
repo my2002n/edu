@@ -28,8 +28,9 @@
             <span v-if="activeTab === 'Show'">直播</span>
         </div>
         <!--第一个-->
-        <el-menu default-active="2" class="el-menu-vertical-demo" background-color="#22345E" text-color="#fff"
-            active-text-color="#55A8FD" v-if="activeTab === 'Member'" :default-openeds="openeds" @open="handleOpen">
+        <el-menu default-active="2" class="el-menu-vertical-demo teacher-nav" background-color="#22345E"
+            text-color="#fff" active-text-color="#55A8FD" v-if="activeTab === 'Member'" :default-openeds="openeds"
+            @open="handleOpen">
             <el-submenu index="1">
                 <template slot="title">
                     <!-- <div class="circle"></div> -->
@@ -315,71 +316,77 @@
 </style>
 <style lang='less'>
     .left-container {
-        box-shadow:0px 0px 12px 0px rgba(113,113,113,0.5);
+        box-shadow: 0px 0px 12px 0px rgba(113, 113, 113, 0.5);
         /*box-shadow:0px 0px 12px 0px red;*/
         position: relative;
-        .el-submenu__title {
-            line-height: 40px !important;
-            height: 40px !important;
-            padding-left: 60px !important;
 
-            &:hover {
-                background: rgba(85, 168, 253, 0.3) !important;
-                color: #55A8FD !important;
-            }
-        }
-
-        .el-menu-item-group {
-            >div {
-                display: none !important;
-            }
-
-            ul li {
-                padding: 0px !important;
-
-                a {
-                    width: 100%;
-                    height: 100%;
-                    display: block;
-                    padding-left: 65px !important;
-
-                }
-
-            }
-
-            .el-menu-item {
+        .teacher-nav {
+            .el-submenu__title {
                 line-height: 40px !important;
                 height: 40px !important;
+                padding-left: 60px !important;
 
                 &:hover {
                     background: rgba(85, 168, 253, 0.3) !important;
                     color: #55A8FD !important;
                 }
+            }
 
-                a:hover {
+            .el-menu-item-group {
+                >div {
+                    display: none !important;
+                }
+
+                ul li {
+                    padding: 0px !important;
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        padding-left: 65px !important;
+
+                    }
+
+                }
+
+                .el-menu-item {
+                    line-height: 40px !important;
+                    height: 40px !important;
+
+                    &:hover {
+                        background: rgba(85, 168, 253, 0.3) !important;
+                        color: #55A8FD !important;
+                    }
+
+                    a:hover {
+                        color: #55A8FD !important;
+                    }
+                }
+
+                .router-link-exact-active {
+                    background: rgba(85, 168, 253, 0.3) !important;
                     color: #55A8FD !important;
+                    width: 160px;
+                }
+
+            }
+
+            .el-submenu__icon-arrow {
+                &::before {
+                    /*position: relative;*/
+                    /*left: 10px;*/
+                    color: #fff;
                 }
             }
-
-            .router-link-exact-active {
-                background: rgba(85, 168, 253, 0.3) !important;
-                color: #55A8FD !important;
-                width: 160px;
-            }
-
         }
 
-        .el-submenu__icon-arrow {
-            &::before {
-                /*position: relative;*/
-                /*left: 10px;*/
-                color: #fff;
-            }
-        }
+
     }
+
     .el-menu {
-        li{
-           cursor: pointer !important;
+        li {
+            cursor: pointer !important;
         }
     }
 

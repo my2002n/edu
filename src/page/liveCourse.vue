@@ -26,12 +26,12 @@
                             <div class="ins-text">支持PC、MAC、IOS、Android、Ipad</div>
                             <div class='suggest-text'>（建议使用客户端直播，体验最好，低延时）</div>
                             <div class="down-btn">
-                                <span>
+                                <div>
                                     PC下载
-                                </span>
-                                <span>
+                                </div>
+                                <div>
                                     MAC下载
-                                </span>
+                                </div>
                             </div>
                         </div>
                         <div class="right-show">
@@ -41,8 +41,8 @@
                             </div>
                             <div class="orange-step"></div>
                             <div class="start-show">点击启动直播</div>
-                            <div>启动客户端时，请注册同意浏览器打开“云端课堂”</div>
-                            <div>如果无法使用客户端，可以</div>
+                            <div class="open-class">启动客户端时，请注册同意浏览器打开“云端课堂”</div>
+                            <div class="click-here">如果无法使用客户端，可以<a href="">点击这里</a>使用网页版直播</div>
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,8 @@
             }
 
             .class-show {
-                width: 708px;
+                width: calc(100% - 314px);
+                min-width: 788px;
                 height: 384px;
                 background: rgba(250, 250, 250, 1);
                 box-shadow: 0px -1px 16px 0px rgba(9, 74, 136, 0.14);
@@ -174,6 +175,9 @@
                 .show-icon {
                     width: 15px;
                     height: 15px;
+                    margin-right: 4px;
+                    position: relative;
+                    top: 2px;
                 }
 
                 .show-text {
@@ -187,7 +191,7 @@
 
 
                 .suggest-text {
-                    // margin-top:
+                    margin-top: 15px;
                 }
 
                 .flex(row, space-between, top, nowrap);
@@ -195,9 +199,10 @@
                 .left-show {
                     width: 50%;
                     text-align: center;
+                    border-right: solid 2px #E8E9EA;
 
                     .student-class {
-                        width: 266px;
+                        width: calc(100% - 88px);
                         height: 154px;
 
                     }
@@ -207,17 +212,29 @@
                     }
 
                     .down-btn {
-                        span {
+                        margin-top: 20px;
+                        padding: 0px 44px;
+
+                        div {
                             width: 98px;
                             height: 35px;
+                            line-height: 35px;
                             background: rgba(83, 204, 144, 1);
                             border-radius: 18px;
                             font-size: 14px;
                             font-family: PingFang-SC-Regular;
                             font-weight: 400;
                             color: rgba(255, 255, 255, 1);
-                            padding: 8px 25px;
-                            cursor: pointer;
+                            float: left;
+                        }
+
+                        div:last-child {
+                            float: right;
+                            margin-right: 8px;
+                        }
+
+                        div:first-child {
+                            margin-left: 8px;
                         }
                     }
                 }
@@ -241,6 +258,19 @@
                         color: rgba(255, 255, 255, 1);
                         text-align: center;
                         line-height: 34px;
+                        margin: auto;
+                        margin-bottom: 36px;
+                    }
+
+                    .open-class {
+                        margin-bottom: 15px;
+                    }
+
+                    .click-here {
+                        a {
+                            text-decoration: none;
+                            color: #409EFF;
+                        }
                     }
                 }
             }

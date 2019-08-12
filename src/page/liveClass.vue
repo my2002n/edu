@@ -92,6 +92,12 @@
                 top: 2px;
 
             }
+
+            span {
+                font-family: PingFang-SC-Regular;
+                font-weight: 400;
+                color: rgba(78, 84, 108, 1);
+            }
         }
 
         .content {
