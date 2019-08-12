@@ -26,70 +26,36 @@
         <div class="dc-login-content">
             <div class="title">
                 <div class="info">
-                    欢迎登录直播课堂
+                    教育机构注册
                 </div>
             </div>
 
             <div class="login-form">
-                <el-tabs v-model="activeName" @tab-click="handleClickTab">
-                    <el-tab-pane label="老师登录" name="first">
-                        <div class="account distance">
-                            <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text"
-                                placeholder="账号" @keyup.enter="loginByAccount" />
-                            <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword"
-                                type="password" placeholder="密码" @keyup.enter="loginByAccount" />
-                            <input @blur="hideErrorTip" class="dc-input-big distance sure-code-input"
-                                v-model="accountPassword" type="password" placeholder="验证码"
-                                @keyup.enter="loginByAccount" />
-                            <!--                            <div class="options little-distance">-->
-                            <!--                                <router-link to="/repassword">忘记密码？</router-link>-->
-                            <!--                            </div>-->
-                            <!--                            <span class="sure-code">此处放验证码</span>-->
-                            <img src="../../src/assets/img/welcome/code.jpg" alt="" class="code-img">
-                            <div class="dc-error-tip little-distance" v-if="errorTip">
-                                {{ errorTip }}
-                            </div>
-                            <div class="space"></div>
-                            <button @click="loginByAccount" class="dc-button-big primary">
-                                登录
-                            </button>
-                            <div class="res">
-                                <router-link to="/schoolRegister">教学机构注册</router-link>
-                            </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="学生登录" name="second">
-                        <div class="account distance">
-                            <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text"
-                                placeholder="手机号码" @keyup.enter="loginByAccount" />
-                            <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword"
-                                type="password" placeholder="密码" @keyup.enter="loginByAccount" />
-                            <input @blur="hideErrorTip" class="dc-input-big distance sure-code-input"
-                                v-model="accountPassword" type="password" placeholder="验证码"
-                                @keyup.enter="loginByAccount" />
-                            <!--                            <div class="options little-distance">-->
-                            <!--                                <router-link to="/repassword">忘记密码？</router-link>-->
-                            <!--                            </div>-->
-                            <img src="../../src/assets/img/welcome/code.jpg" alt="" class="code-img">
-                            <div class="dc-error-tip little-distance" v-if="errorTip">
-                                {{ errorTip }}
-                            </div>
-                            <div class="space"></div>
-                            <button @click="loginByAccount" class="dc-button-big primary">
-                                登录
-                            </button>
-                            <div class="res-contain">
-                                <div class="res">
-                                    <router-link to="/register">忘记密码</router-link>
-                                </div>
-                                <div class="res">
-                                    <router-link to="/register">学生注册</router-link>
-                                </div>
-                            </div>
+                <div class="account distance">
+                    <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountName" type="text"
+                        placeholder="手机号" @keyup.enter="loginByAccount" />
+                    <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword" type="password"
+                        placeholder="密码" @keyup.enter="loginByAccount" />
+                    <input @blur="hideErrorTip" class="dc-input-big distance" v-model="accountPassword" type="password"
+                        placeholder="确认密码" @keyup.enter="loginByAccount" />
+                    <input @blur="hideErrorTip" class="dc-input-big distance sure-code-input" v-model="accountPassword"
+                        type="password" placeholder="验证码" @keyup.enter="loginByAccount" />
+                    <img src="../../src/assets/img/welcome/code.jpg" alt="" class="code-img">
+                    <input @blur="hideErrorTip" class="dc-input-big distance sure-code-input" v-model="accountPassword"
+                        type="password" placeholder="手机验证码" @keyup.enter="loginByAccount" />
+                    <span class="get-code-btn">获取验证码</span>
 
-                        </div>
-                    </el-tab-pane>
-                </el-tabs>
+                    <!-- <div class="dc-error-tip little-distance" v-if="errorTip">
+                        {{ errorTip }}
+                    </div> -->
+                    <div class="space"></div>
+                    <button @click="loginByAccount" class="dc-button-big primary">
+                        注册
+                    </button>
+                    <div class="res">
+                        <router-link to="/login">老师登陆</router-link>
+                    </div>
+                </div>
                 <div class="bot1">技术支持+微信：my2002n</div>
                 <div class="bot2">
                     <span>北京智云科技有限公司</span>
@@ -481,6 +447,15 @@
                     height: 41px;
                     float: right;
                     margin-right: 1px;
+                }
+
+                .get-code-btn {
+                    background: rgba(85, 168, 253, 1);
+                    border-radius: 2px;
+                    padding: 11px 14px;
+                    color: #fff;
+                    cursor: pointer;
+                    float: right;
                 }
 
             }

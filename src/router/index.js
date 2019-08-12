@@ -12,10 +12,6 @@ export default new Router({
 
         },
         {
-            path: '/login',
-            component: r => require.ensure([], () => r(require('../page/login')), 'login')
-        },
-        {
             path: '/addStudent',
             component: r => require.ensure([], () => r(require('../page/addStudent')), 'addStudent')
         },
@@ -50,6 +46,19 @@ export default new Router({
         {
             path: '/largeClassList',
             component: r => require.ensure([], () => r(require('../page/largeClassList')), 'largeClassList')
+        },
+        // 登陆注册
+        {
+            path: '/login',
+            component: r => require.ensure([], () => r(require('../page/login')), 'login')
+        },
+        {
+            path: '/schoolRegister',
+            component: r => require.ensure([], () => r(require('../page/schoolRegister')), 'schoolRegister')
+        },
+        {
+            path: '/login',
+            component: r => require.ensure([], () => r(require('../page/login')), 'login')
         },
         // 学生开始
         {
