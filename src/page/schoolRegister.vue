@@ -456,6 +456,9 @@
                     color: #fff;
                     cursor: pointer;
                     float: right;
+                    font-size: 14px;
+                    font-family: PingFang-SC-Regular;
+                    font-weight: 400;
                 }
 
             }
