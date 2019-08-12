@@ -320,64 +320,62 @@
         /*box-shadow:0px 0px 12px 0px red;*/
         position: relative;
 
-        .teacher-nav {
-            .el-submenu__title {
+        .el-submenu__title {
+            line-height: 40px !important;
+            height: 40px !important;
+            padding-left: 60px !important;
+
+            &:hover {
+                background: rgba(85, 168, 253, 0.3) !important;
+                color: #55A8FD !important;
+            }
+        }
+
+        .el-menu-item-group {
+            >div {
+                display: none !important;
+            }
+
+            ul li {
+                padding: 0px !important;
+
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    padding-left: 65px !important;
+
+                }
+
+            }
+
+            .el-menu-item {
                 line-height: 40px !important;
                 height: 40px !important;
-                padding-left: 60px !important;
 
                 &:hover {
                     background: rgba(85, 168, 253, 0.3) !important;
                     color: #55A8FD !important;
                 }
-            }
 
-            .el-menu-item-group {
-                >div {
-                    display: none !important;
-                }
-
-                ul li {
-                    padding: 0px !important;
-
-                    a {
-                        width: 100%;
-                        height: 100%;
-                        display: block;
-                        padding-left: 65px !important;
-
-                    }
-
-                }
-
-                .el-menu-item {
-                    line-height: 40px !important;
-                    height: 40px !important;
-
-                    &:hover {
-                        background: rgba(85, 168, 253, 0.3) !important;
-                        color: #55A8FD !important;
-                    }
-
-                    a:hover {
-                        color: #55A8FD !important;
-                    }
-                }
-
-                .router-link-exact-active {
-                    background: rgba(85, 168, 253, 0.3) !important;
+                a:hover {
                     color: #55A8FD !important;
-                    width: 160px;
                 }
-
             }
 
-            .el-submenu__icon-arrow {
-                &::before {
-                    /*position: relative;*/
-                    /*left: 10px;*/
-                    color: #fff;
-                }
+            .router-link-exact-active {
+                background: rgba(85, 168, 253, 0.3) !important;
+                color: #55A8FD !important;
+                width: 160px;
+            }
+
+        }
+
+        .el-submenu__icon-arrow {
+            &::before {
+                /*position: relative;*/
+                /*left: 10px;*/
+                color: #fff;
             }
         }
 

@@ -4,7 +4,24 @@
         <div class='right-container'>
             <Header class="header" :headerList="headerList"></Header>
             <div class="right-content white-color">
-                敬请期待
+                <div class="add-title">
+                    <img src="../../src/assets/img/welcome/add.png" alt="">
+                    <span>新增学科</span>
+                </div>
+                <div class="add-form-container">
+                    <el-form ref="form" :model="form" label-width="80px" class="add-form">
+                        <el-form-item label="学校名称">
+                            <el-input v-model="form.phone"></el-input>
+                        </el-form-item>
+                        <el-form-item label="备注">
+                            <el-input type="textarea" v-model="form.desc"></el-input>
+                        </el-form-item>
+                        <el-form-item class="btn-group">
+                            <el-button type="primary">确定</el-button>
+                            <el-button>重置</el-button>
+                        </el-form-item>
+                    </el-form>
+                </div>
             </div>
         </div>
     </div>
@@ -69,6 +86,13 @@
             width: 20px;
             position: relative;
             top: 4px;
+            margin-right: 12px;
+        }
+
+        span {
+            font-size: 20px;
+            font-family: PingFang-SC-Regular;
+            font-weight: 400;
         }
     }
 
@@ -104,6 +128,10 @@
 
     .date-line {
         text-align: center !important
+    }
+
+    textarea {
+        min-height: 100px !important
     }
 
 </style>
