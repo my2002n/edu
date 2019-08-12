@@ -113,6 +113,12 @@
             top: 4px;
             margin-right: 12px;
         }
+
+        span {
+            font-size: 20px;
+            font-family: PingFang-SC-Regular;
+            font-weight: 400;
+        }
     }
 
     .add-form-container {

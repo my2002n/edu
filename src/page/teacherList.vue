@@ -179,7 +179,7 @@
 <style lang="less">
     .el-table {
         border: 1px solid rgba(223, 230, 236, 1) !important;
-        border-bottom: none!important;
+        border-bottom: none !important;
     }
 
     .el-table__header-wrapper {
@@ -217,6 +217,56 @@
     .static-input {
         width: 150px !important;
         height: 40px !important;
+    }
+
+    // 分页样式
+    .el-pagination {
+        .el-pager {
+            .number {
+                margin: 0px !important;
+                background: #ffffff !important;
+                border: 1px solid rgba(209, 219, 229, 1);
+                color: #546374 !important;
+                font-weight: 400;
+                border-left: none
+            }
+
+            li.active {
+                background-color: #409EFF !important;
+                color: #fff !important;
+                border-radius: 0px !important;
+                width: 29px !important;
+                height: 28px !important;
+                border: solid 1px #409EFF !important;
+            }
+
+            li {
+                border-radius: 0px !important;
+            }
+        }
+
+        .btn-prev,
+        .btn-next {
+            margin: 0px !important;
+            background: #ffffff !important;
+            border: 1px solid rgba(209, 219, 229, 1);
+
+        }
+
+        .btn-prev {
+            border-top-right-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+        }
+
+        .btn-next {
+            border-top-left-radius: 0px !important;
+            border-bottom-left-radius: 0px !important;
+        }
+
+
+        .btn-next {
+            border-left: none;
+        }
     }
 
     /*.el-form-item__content {*/
